@@ -199,12 +199,13 @@ for (const [id, m] of Object.entries(manifest)) {
 }
 for (const [alias, target] of Object.entries(ALIASES)) manifest[alias] = manifest[target];
 
-// ——— OG cover (1200×630) from the hero plate ———
+// ——— OG base plate (1200×630) from the hero; scripts/make-og.mjs
+//     composites the record typography over it → og-cover.jpg ———
 await mkdir(path.join(OUT, 'social'), { recursive: true });
 await sharp(path.join(RAW, `${P}01_09_20 AM.png`))
   .resize(1200, 630, { fit: 'cover', position: sharp.strategy.attention })
   .jpeg({ quality: 80, progressive: true, mozjpeg: true })
-  .toFile(path.join(OUT, 'social', 'og-cover.jpg'));
+  .toFile(path.join(OUT, 'social', 'og-base.jpg'));
 
 // ——— Favicon: ring of 40 gold ticks (one per year) on navy ———
 const ticks = Array.from({ length: 40 }, (_, i) => {

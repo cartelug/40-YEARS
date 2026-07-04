@@ -30,9 +30,9 @@ const total = String(frames.length).padStart(3, '0');
 
     <!-- letterbox top bar -->
     <div class="mt-12 border-y border-line bg-obsidian py-2 md:mt-16" aria-hidden="true">
-      <p class="stamp container-wide flex justify-between text-mist/70">
-        <span>NATIONAL ARCHIVE · SERIES A</span>
-        <span class="tnum">UGANDA · 1986–2026</span>
+      <p class="stamp container-wide flex justify-between gap-4 text-mist/70">
+        <span class="whitespace-nowrap"><span class="max-sm:hidden">NATIONAL ARCHIVE · </span>SERIES A</span>
+        <span class="tnum whitespace-nowrap">UGANDA · 1986–2026</span>
       </p>
     </div>
 
@@ -60,9 +60,9 @@ const total = String(frames.length).padStart(3, '0');
               </div>
               <span class="stamp absolute left-3 top-3 bg-obsidian/85 px-2 py-1 text-gold tnum">{f.data.stamp}</span>
             </div>
-            <figcaption class="flex items-baseline justify-between gap-6 pt-3">
+            <figcaption class="flex flex-col gap-1 pt-3 md:flex-row md:items-baseline md:justify-between md:gap-6">
               <span class="stamp text-mist-bright">{f.data.caption}</span>
-              <span class="stamp whitespace-nowrap text-mist/70">{f.data.place}</span>
+              <span class="stamp text-mist/70 md:whitespace-nowrap">{f.data.place}</span>
             </figcaption>
           </figure>
         ))
