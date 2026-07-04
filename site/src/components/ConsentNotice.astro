@@ -1,0 +1,49 @@
+<div
+  id="consent"
+  hidden
+  class="fixed bottom-5 left-5 z-50 max-w-xs border border-line bg-raised p-5"
+  role="dialog"
+  aria-labelledby="consent-title"
+  aria-describedby="consent-copy"
+>
+  <p id="consent-title" class="stamp text-gold">Measurement</p>
+  <p id="consent-copy" class="mt-3 text-[0.85rem] leading-relaxed text-mist-bright">
+    May this record count your visit? First-party only — no cookies, no identifiers, nothing
+    shared with third parties.
+  </p>
+  <div class="mt-4 flex gap-3">
+    <button
+      id="consent-allow"
+      type="button"
+      class="stamp min-h-10 border border-gold px-4 text-gold transition-colors duration-[240ms] hover:bg-gold hover:text-navy"
+    >
+      Allow
+    </button>
+    <button
+      id="consent-decline"
+      type="button"
+      class="stamp min-h-10 border border-line px-4 text-mist-bright transition-colors duration-[240ms] hover:border-mist"
+    >
+      Decline
+    </button>
+  </div>
+</div>
+
+<script>
+  const box = document.getElementById('consent')!;
+  const KEY = 'fy-consent';
+  if (!localStorage.getItem(KEY)) box.hidden = false;
+  document.getElementById('consent-allow')!.addEventListener('click', () => {
+    localStorage.setItem(KEY, 'granted');
+    box.hidden = true;
+    const c = (window as any).__recordConsent;
+    if (c) {
+      c.granted = true;
+      c.beacon();
+    }
+  });
+  document.getElementById('consent-decline')!.addEventListener('click', () => {
+    localStorage.setItem(KEY, 'declined');
+    box.hidden = true;
+  });
+</script>

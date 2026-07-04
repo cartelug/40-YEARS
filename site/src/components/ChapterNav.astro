@@ -1,0 +1,41 @@
+---
+/**
+ * Scroll-spy chapter rail, docked right on desktop.
+ * Pure anchors (keyboard-first); the boot script marks the active one.
+ */
+export interface Props {
+  chapters: { id: string; num: string; title: string }[];
+}
+const { chapters } = Astro.props;
+---
+
+<nav
+  id="chapter-nav"
+  aria-label="Chapters"
+  class="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 lg:block"
+>
+  <ol class="flex flex-col gap-1">
+    {
+      chapters.map((c) => (
+        <li>
+          <a
+            href={`#${c.id}`}
+            data-spy={c.id}
+            class="group flex min-h-6 items-center justify-end gap-3 py-0.5"
+          >
+            <span class="stamp max-w-0 overflow-hidden whitespace-nowrap text-mist opacity-0 transition-all duration-[400ms] group-hover:max-w-48 group-hover:opacity-100 group-focus-visible:max-w-48 group-focus-visible:opacity-100 group-[.is-active]:text-gold-hi">
+              {c.title}
+            </span>
+            <span class="stamp text-mist transition-colors duration-[240ms] group-hover:text-gold-hi group-[.is-active]:text-gold tnum">
+              {c.num}
+            </span>
+            <span
+              aria-hidden="true"
+              class="h-px w-4 bg-line transition-all duration-[240ms] group-hover:bg-gold-hi group-[.is-active]:w-7 group-[.is-active]:bg-gold"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>

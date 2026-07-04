@@ -1,0 +1,46 @@
+---
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+import Seal from './Seal.astro';
+---
+
+<Chapter id="close" num="10" title="The Record Continues" variant="cream">
+  <div class="absolute inset-0 opacity-90" aria-hidden="true">
+    <Pic id="bg-close-ceremonial-01" sizes="100vw" alt="" class="h-full w-full object-cover" />
+  </div>
+
+  <div class="container-wide relative z-10 pb-28 md:pb-36">
+    <div class="mx-auto max-w-4xl pt-6 text-center md:pt-10">
+      <h2 class="display-l text-ink" id="close-title" data-reveal>
+        Four decades. One journey.<br />A transformed nation.
+      </h2>
+
+      <p class="body-copy mx-auto mt-8 max-w-[54ch] text-ink-soft" data-reveal>
+        Forty years ago, a nation in ruins. Today, a nation on the rise. The work continues —
+        but the distance travelled is a story worth telling, and worth honouring. This record
+        remains open, to be extended by those who come next.
+      </p>
+
+      <div class="mx-auto mt-16 w-[min(78vw,420px)] md:mt-20" data-reveal>
+        <Seal class="w-full" />
+      </div>
+
+      <p class="stamp mt-16 text-ink-soft md:mt-20" data-reveal>
+        Signed into the national memory · Kampala · MMXXVI
+      </p>
+      <p class="eyebrow mt-4 text-ink" data-reveal>State House · Republic of Uganda</p>
+
+      <div class="mt-14 flex flex-wrap items-center justify-center gap-6" data-reveal>
+        <a
+          href="/downloads"
+          class="eyebrow inline-flex min-h-12 items-center border border-ink px-8 py-4 text-ink transition-colors duration-[240ms] hover:bg-ink hover:text-cream focus-visible:bg-ink focus-visible:text-cream"
+        >
+          Download the Record
+        </a>
+        <a href="#opening" data-scroll-to class="stamp text-ink-soft transition-colors duration-[240ms] hover:text-gold-deep">
+          Return to the beginning ↑
+        </a>
+      </div>
+    </div>
+  </div>
+</Chapter>

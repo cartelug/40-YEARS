@@ -1,0 +1,29 @@
+[
+  {
+    "id": "v1",
+    "quote": "I received support through the parish programme, started a piggery, and today I employ three young people from my village.",
+    "name": "Nakato",
+    "place": "Mukono",
+    "programme": "Parish Development Model",
+    "note": "Representative testimony — final attributed testimonies to be supplied by the Presidential Press Unit.",
+    "order": 1
+  },
+  {
+    "id": "v2",
+    "quote": "When the borehole was drilled, my children stopped missing school to fetch water. Now they study, and we are healthier.",
+    "name": "Lokol",
+    "place": "Moroto",
+    "programme": "Rural water",
+    "note": "Representative testimony — final attributed testimonies to be supplied by the Presidential Press Unit.",
+    "order": 2
+  },
+  {
+    "id": "v3",
+    "quote": "With the new power line, my workshop runs all day. I have doubled my welding business and taken on an apprentice.",
+    "name": "Okello",
+    "place": "Gulu",
+    "programme": "Rural electrification",
+    "note": "Representative testimony — final attributed testimonies to be supplied by the Presidential Press Unit.",
+    "order": 3
+  }
+]

@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+import UgandaOutline from './UgandaOutline.astro';
+
+const eras = (await getCollection('eras')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Chapter id="journey" num="04" title="The Journey" class="grain">
+  <div class="absolute inset-0 opacity-25" aria-hidden="true">
+    <Pic id="bg-active-dark-02" sizes="100vw" alt="" class="h-full w-full object-cover" />
+  </div>
+
+  <div class="container-wide relative z-10" data-reveal>
+    <h2 class="heading-1 mt-10 max-w-[20ch] text-cream md:mt-16" id="journey-title">
+      A journey of courage.<br />A record of transformation.
+    </h2>
+    <p class="body-copy mt-6 max-w-[52ch] text-mist-bright">
+      Six eras, one continuous line. The imagery of each era is held inside the shape of the
+      nation itself — scroll, and the decades pass through it.
+    </p>
+  </div>
+
+  <!-- Pinned era sequencer (vertical scroll → era progression). Falls back to a vertical stack. -->
+  <div id="journey-pin" class="relative z-10 mt-12 md:mt-16">
+    <div id="journey-stage" class="md:flex md:min-h-screen md:flex-col md:justify-center">
+      <div class="container-wide w-full">
+        <div class="grid grid-cols-12 items-center gap-6">
+          <!-- Nation silhouette holding the era imagery -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-5">
+            <div class="relative mx-auto aspect-[1000/1043] w-full max-w-[430px] md:max-w-[480px]">
+              <div class="absolute inset-0" style="clip-path: url(#uganda-journey-clip)">
+                {
+                  eras.map((era, i) => (
+                    <div
+                      class="journey-img absolute inset-0"
+                      data-era-img={era.data.id}
+                      style={i === 0 ? '' : 'opacity:0'}
+                    >
+                      <Pic
+                        id={era.data.image}
+                        sizes="(max-width: 767px) 92vw, 40vw"
+                        alt=""
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                  ))
+                }
+                <div class="absolute inset-0 bg-navy/25"></div>
+              </div>
+              <UgandaOutline
+                class="absolute inset-0 h-full w-full text-gold/80"
+                strokeWidth={1.5}
+                clipId="uganda-journey-clip"
+              />
+              <span class="stamp absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-mist" aria-hidden="true">
+                The Republic · one continuous record
+              </span>
+            </div>
+          </div>
+
+          <!-- Era text panels -->
+          <div class="col-span-12 mt-16 md:col-span-6 md:mt-0 lg:col-span-6 lg:col-start-7">
+            <div id="journey-panels" class="relative">
+              {
+                eras.map((era, i) => (
+                  <article
+                    class="journey-panel max-md:border-t max-md:border-line max-md:py-10 md:py-2"
+                    data-era-panel={era.data.id}
+                    aria-label={`${era.data.years} — ${era.data.title}`}
+                  >
+                    <p class="tnum font-cond text-[clamp(4rem,9vw,7.5rem)] font-bold uppercase leading-none text-gold" aria-hidden="true">
+                      {era.data.years}
+                    </p>
+                    <h3 class="heading-2 mt-4 text-cream">{era.data.title}</h3>
+                    <p class="body-copy mt-4 max-w-[44ch] text-mist-bright">{era.data.copy}</p>
+                    <ul class="mt-6 max-w-[52ch]">
+                      {era.data.milestones.map((m) => (
+                        <li class="flex gap-4 border-t border-line py-3 last:border-b">
+                          <span class="stamp min-w-14 pt-0.5 text-gold tnum">{m.year}</span>
+                          <span class="body-copy text-[0.95rem] text-mist-bright">{m.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Era scale — brightens as eras pass -->
+        <div class="mt-16 hidden md:block" aria-hidden="true">
+          <div class="relative h-px bg-line">
+            <div id="journey-progress" class="absolute inset-y-0 left-0 origin-left bg-gold" style="width:100%;transform:scaleX(0.02)"></div>
+          </div>
+          <ol class="mt-3 flex justify-between">
+            {
+              eras.map((era) => (
+                <li class="stamp journey-tick text-mist transition-colors duration-[400ms] tnum" data-era-tick={era.data.id}>
+                  {era.data.years}
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative z-10 h-24 md:h-32"></div>
+</Chapter>

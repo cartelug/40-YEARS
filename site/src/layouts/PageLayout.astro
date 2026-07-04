@@ -1,0 +1,42 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  path: string;
+  eyebrow: string;
+  heading: string;
+  standfirst?: string;
+}
+const { title, description, path, eyebrow, heading, standfirst } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} path={path}>
+  <header class="border-b border-line">
+    <div class="container-wide flex items-center justify-between py-6">
+      <a href="/" class="group flex items-center gap-4" aria-label="Back to the record">
+        <img src="/favicon.svg" alt="" width="34" height="34" class="h-[34px] w-[34px]" />
+        <span class="leading-tight">
+          <span class="eyebrow block text-cream">Republic of Uganda</span>
+          <span class="stamp block text-mist group-hover:text-gold-hi transition-colors duration-[240ms]">Forty Years of Transformation</span>
+        </span>
+      </a>
+      <nav aria-label="Record pages" class="flex items-center gap-8">
+        <a href="/" class="stamp text-mist-bright transition-colors duration-[240ms] hover:text-gold-hi">← The Record</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container-wide pt-20 pb-16 md:pt-28">
+      <p class="eyebrow text-gold">{eyebrow}</p>
+      <h1 class="heading-1 mt-4 max-w-[22ch] text-cream">{heading}</h1>
+      {standfirst && <p class="body-copy mt-6 max-w-[56ch] text-mist-bright">{standfirst}</p>}
+    </div>
+    <slot />
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

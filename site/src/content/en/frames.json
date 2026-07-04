@@ -1,0 +1,106 @@
+[
+  {
+    "id": "frame-01",
+    "image": "frame-01",
+    "caption": "Sunrise over the savanna — the light the new era rose into.",
+    "place": "Queen Elizabeth National Park",
+    "stamp": "FRAME 001 · UGANDA · 1986–2026",
+    "order": 1
+  },
+  {
+    "id": "frame-02",
+    "image": "frame-02",
+    "caption": "The Victoria Nile below Murchison Falls — the river that powers the nation.",
+    "place": "Murchison Falls",
+    "stamp": "FRAME 002 · UGANDA · 1986–2026",
+    "order": 2
+  },
+  {
+    "id": "frame-03",
+    "image": "frame-03",
+    "caption": "The Rwenzori foothills above cultivated valleys.",
+    "place": "Kasese",
+    "stamp": "FRAME 003 · UGANDA · 1986–2026",
+    "order": 3
+  },
+  {
+    "id": "frame-04",
+    "image": "frame-04",
+    "caption": "Sipi Falls, where the eastern highlands drop toward the plains.",
+    "place": "Kapchorwa",
+    "stamp": "FRAME 004 · UGANDA · 1986–2026",
+    "order": 4
+  },
+  {
+    "id": "frame-05",
+    "image": "frame-05",
+    "caption": "Terraced hillsides of the Kigezi highlands — agriculture as inheritance.",
+    "place": "Kabale",
+    "stamp": "FRAME 005 · UGANDA · 1986–2026",
+    "order": 5
+  },
+  {
+    "id": "frame-06",
+    "image": "frame-06",
+    "caption": "High moorland on Mount Elgon.",
+    "place": "Mbale · Bududa",
+    "stamp": "FRAME 006 · UGANDA · 1986–2026",
+    "order": 6
+  },
+  {
+    "id": "frame-07",
+    "image": "frame-07",
+    "caption": "The Nile in whitewater at the top of Murchison Falls.",
+    "place": "Murchison Falls",
+    "stamp": "FRAME 007 · UGANDA · 1986–2026",
+    "order": 7
+  },
+  {
+    "id": "frame-08",
+    "image": "frame-08",
+    "caption": "A crater lake holding the sky, western rift valley.",
+    "place": "Queen Elizabeth National Park",
+    "stamp": "FRAME 008 · UGANDA · 1986–2026",
+    "order": 8
+  },
+  {
+    "id": "frame-09",
+    "image": "frame-09",
+    "caption": "Open savanna reaching toward the Nile — the landscapes that host the region's displaced.",
+    "place": "Nwoya",
+    "stamp": "FRAME 009 · UGANDA · 1986–2026",
+    "order": 9
+  },
+  {
+    "id": "frame-10",
+    "image": "frame-10",
+    "caption": "Lake Bunyonyi, still water among terraced hills.",
+    "place": "Kabale",
+    "stamp": "FRAME 010 · UGANDA · 1986–2026",
+    "order": 10
+  },
+  {
+    "id": "frame-11",
+    "image": "frame-11",
+    "caption": "Homesteads across the south-western hills — where the poverty line moved.",
+    "place": "Kigezi",
+    "stamp": "FRAME 011 · UGANDA · 1986–2026",
+    "order": 11
+  },
+  {
+    "id": "frame-12",
+    "image": "frame-12",
+    "caption": "Lake Victoria at Jinja — cranes on the industrial shoreline.",
+    "place": "Jinja",
+    "stamp": "FRAME 012 · UGANDA · 1986–2026",
+    "order": 12
+  },
+  {
+    "id": "frame-13",
+    "image": "frame-13",
+    "caption": "First light over Bwindi — the horizon the record now faces.",
+    "place": "Bwindi Impenetrable National Park",
+    "stamp": "FRAME 013 · UGANDA · 1986–2026",
+    "order": 13
+  }
+]

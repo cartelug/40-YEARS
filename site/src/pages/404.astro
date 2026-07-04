@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Pic from '../components/Pic.astro';
+---
+
+<BaseLayout
+  title="Frame Not Found · Forty Years of Transformation"
+  description="The record holds no page at this address."
+  path="/404"
+>
+  <main id="main" class="seam-dark grain relative flex min-h-[100svh] flex-col">
+    <div class="absolute inset-0 opacity-60" aria-hidden="true">
+      <Pic id="bg-hero-03" sizes="100vw" alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,20,0.55),rgba(11,14,20,0.85))]"></div>
+    </div>
+    <div class="container-wide relative z-10 flex flex-1 flex-col items-start justify-center py-24">
+      <p class="stamp text-gold tnum">FRAME 404 · UGANDA · 1986–2026</p>
+      <h1 class="display-xl mt-6 text-cream">Frame not found</h1>
+      <p class="body-copy mt-6 max-w-[46ch] text-mist-bright">
+        The record holds no page at this address. The archive, however, remains open — and the
+        story continues where it began.
+      </p>
+      <a
+        href="/"
+        class="eyebrow mt-10 inline-flex min-h-12 items-center border border-gold px-8 py-4 text-gold transition-colors duration-[240ms] hover:bg-gold hover:text-navy"
+      >
+        Return to the Record
+      </a>
+    </div>
+    <div class="relative z-10 border-t border-line bg-obsidian py-2" aria-hidden="true">
+      <p class="stamp container-wide flex justify-between text-mist/70">
+        <span>NATIONAL ARCHIVE · MISFILED</span><span class="tnum">EST. 1986</span>
+      </p>
+    </div>
+  </main>
+</BaseLayout>

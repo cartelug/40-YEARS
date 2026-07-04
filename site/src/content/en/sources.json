@@ -1,0 +1,66 @@
+[
+  {
+    "id": "gdp",
+    "figure": "GDP per capita: $330 → $986",
+    "statement": "Gross domestic product per person, current US dollars, 1986 baseline against the most recent full-year figure.",
+    "provenance": "Uganda Bureau of Statistics national accounts; World Bank World Development Indicators (NY.GDP.PCAP.CD).",
+    "basis": "The 1986 figure reflects the post-conflict trough; the trajectory holds across both national and Bretton-Woods series. Approved figure fixed for this record.",
+    "order": 1
+  },
+  {
+    "id": "power",
+    "figure": "Electricity generated: 60 MW → 2,048 MW",
+    "statement": "Installed national generation capacity: one ageing dam (Nalubaale) in 1986 against the grid of 2024–26 including Karuma (600 MW), Isimba (183 MW), Bujagali (250 MW) and grid solar.",
+    "provenance": "Electricity Regulatory Authority (ERA) installed-capacity statistics; Ministry of Energy and Mineral Development.",
+    "basis": "Capacity, not dispatch. The 2,048 MW milestone follows the commissioning of Karuma. Approved figure fixed for this record.",
+    "order": 2
+  },
+  {
+    "id": "poverty",
+    "figure": "Poverty: 56% → 16%",
+    "statement": "Share of the population below the national poverty line, early-1990s baseline against the most recent Uganda National Household Survey round.",
+    "provenance": "Uganda Bureau of Statistics — Uganda National Household Survey series (1992/93 baseline of 56.4%).",
+    "basis": "Measured against the national line, not the international $2.15 line. Approved figure fixed for this record.",
+    "order": 3
+  },
+  {
+    "id": "refugees",
+    "figure": "Refugees hosted: 1.8M",
+    "statement": "Refugees and asylum-seekers hosted on Ugandan territory — the largest refugee population in Africa.",
+    "provenance": "UNHCR Uganda operational data portal; Office of the Prime Minister (Department of Refugees).",
+    "basis": "Under the Refugee Act 2006: land allocation, freedom of movement, right to work. Approved figure fixed for this record.",
+    "order": 4
+  },
+  {
+    "id": "stability",
+    "figure": "Stability: 40 years",
+    "statement": "Unbroken constitutional order from January 1986 to 2026, after a quarter-century marked by coups and civil war.",
+    "provenance": "Constitution of the Republic of Uganda (1995); national historical record.",
+    "basis": "The anniversary this record marks. Approved figure fixed for this record.",
+    "order": 5
+  },
+  {
+    "id": "supporting",
+    "figure": "Supporting facts (chapters 04–09)",
+    "statement": "Literacy 43% → 70%+; ~5,000 factories from 80; HIV prevalence −70% through the 1990s; 51% household electricity access; 51 km Kampala–Entebbe Expressway; ~230,000 barrels/day oil at peak; Bidi Bidi and Nakivale settlements.",
+    "provenance": "UBOS statistical abstracts; Ministry of Health HIV estimates (peak ~15% c.1991 to ~5% by 2001); UNRA project records; Petroleum Authority of Uganda projections; UNHCR settlement profiles.",
+    "basis": "Contextual figures supporting the five approved figures; each traces to the cited public series.",
+    "order": 6
+  },
+  {
+    "id": "imagery",
+    "figure": "Imagery",
+    "statement": "Thirteen landscape photographs of Uganda (Lake Bunyonyi, Sipi Falls, Rwenzori, Bwindi, Mount Elgon, Queen Elizabeth NP, Murchison Falls, Kigezi terraces, Lake Victoria at Jinja); twenty-five illustrative plates (hero portrait fusion, topographic, ledger and ceremonial surfaces) generated for this record.",
+    "provenance": "Photography: supplied production archive — rights to be confirmed with the Presidential Press Unit before public launch. Illustrative plates: commissioned AI-assisted generations, treated as artwork, not documentary evidence.",
+    "basis": "Two generated plates were rejected at intake (wrong national geography; degenerate output) and do not appear. All geography used for data display is drawn from surveyed coordinates, not generated art.",
+    "order": 7
+  },
+  {
+    "id": "type",
+    "figure": "Typography",
+    "statement": "TeX Gyre Heros & TeX Gyre Heros Cn (GUST e-foundry), self-hosted subsets — the URW Nimbus Sans lineage of the Helvetica design.",
+    "provenance": "GUST Font Licence (free to embed and distribute). Platform Helvetica Neue is used where the operating system provides it.",
+    "basis": "No commercial font files are distributed with this site.",
+    "order": 8
+  }
+]

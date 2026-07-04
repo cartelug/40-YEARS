@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+
+const voices = (await getCollection('voices')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Chapter id="voices" num="07" title="Voices" class="grain">
+  <div class="absolute inset-0 opacity-60" aria-hidden="true">
+    <Pic id="bg-quiet-dark-02" sizes="100vw" alt="" class="h-full w-full object-cover" />
+  </div>
+
+  <div class="container-wide relative z-10 pb-32 md:pb-44">
+    <div class="mt-10 md:mt-16" data-reveal>
+      <h2 class="heading-1 max-w-[18ch] text-cream" id="voices-title">The record told through lives.</h2>
+      <p class="body-copy mt-6 max-w-[52ch] text-mist-bright">
+        Behind every number, a life changed. Testimony is presented here the way a museum
+        presents it — at full size, without decoration.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-x-6 gap-y-14 pt-16 md:pt-24">
+      <figure class="col-span-12 md:col-span-4 lg:col-span-3" data-reveal>
+        <div class="md:sticky md:top-24">
+          <Pic
+            id="photo-voice-01"
+            sizes="(max-width: 767px) 60vw, 24vw"
+            class="mx-auto max-h-[420px] w-auto object-contain md:mx-0"
+          />
+          <figcaption class="stamp mt-4 text-mist">
+            A citizen of the record · engraved from the national contour
+          </figcaption>
+        </div>
+      </figure>
+
+      <div class="col-span-12 md:col-span-8 lg:col-span-8 lg:col-start-5">
+        {
+          voices.map((v, i) => (
+            <figure class="voice-panel border-t border-line py-14 first:border-t-0 first:pt-0 md:py-20" data-reveal>
+              <blockquote class="display-l max-w-[24ch] !text-[clamp(1.75rem,3.6vw,3.25rem)] text-cream">
+                “{v.data.quote}”
+              </blockquote>
+              <figcaption class="stamp mt-8 text-mist">
+                <span class="text-gold">{v.data.name}</span> · {v.data.place} · {v.data.programme}
+                <span class="tnum text-mist/60"> · TESTIMONY {String(i + 1).padStart(2, '0')}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+        <p class="stamp max-w-[64ch] border-t border-line pt-8 text-mist/80" data-reveal>
+          Representative testimonies, drawn from the programmes named. Final attributed
+          testimonies are being collected by the Presidential Press Unit for the anniversary
+          edition — see <a href="/sources" class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-hi">sources</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</Chapter>

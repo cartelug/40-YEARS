@@ -1,0 +1,110 @@
+[
+  {
+    "id": "e1986",
+    "years": "1986",
+    "title": "Foundation",
+    "copy": "The National Resistance Movement takes power in a country exhausted by conflict. The work begins with the hardest material there is: trust.",
+    "image": "photo-journey-1986-01",
+    "milestones": [
+      {
+        "year": "1986",
+        "text": "A fundamental change — the rebuilding of the nation begins."
+      },
+      {
+        "year": "1987",
+        "text": "Currency reform and an IMF-backed recovery programme begin to tame hyperinflation."
+      }
+    ],
+    "order": 1
+  },
+  {
+    "id": "e1990s",
+    "years": "1990s",
+    "title": "Stabilisation",
+    "copy": "A new constitution, the first direct presidential election, and a public-health campaign the world would study. The state finds its footing.",
+    "image": "photo-journey-1990s-01",
+    "milestones": [
+      {
+        "year": "1995",
+        "text": "A new national constitution resets the legal foundation."
+      },
+      {
+        "year": "1996",
+        "text": "The first directly elected president in Uganda's history takes office."
+      },
+      {
+        "year": "1997",
+        "text": "Universal Primary Education opens the school gates to millions."
+      },
+      {
+        "year": "1990s",
+        "text": "National HIV prevalence falls by around seventy percent — a global model."
+      }
+    ],
+    "order": 2
+  },
+  {
+    "id": "e2000s",
+    "years": "2000s",
+    "title": "Growth",
+    "copy": "The economy compounds. Farms feed factories; enrolment climbs; a landmark refugee law opens the national door and keeps it open.",
+    "image": "photo-journey-2000s-01",
+    "milestones": [
+      {
+        "year": "2006",
+        "text": "A landmark Refugee Act — among the world's most progressive — is enacted."
+      },
+      {
+        "year": "2007",
+        "text": "Vision 2040, the long-term blueprint for a modern nation, is approved."
+      }
+    ],
+    "order": 3
+  },
+  {
+    "id": "e2010s",
+    "years": "2010s",
+    "title": "Transformation",
+    "copy": "Power on the Nile. Expressways, bridges and transmission lines carry the decade; the grid reaches districts that had never been connected.",
+    "image": "photo-journey-2010s-01",
+    "milestones": [
+      {
+        "year": "2019",
+        "text": "The Isimba Dam and the Kampala–Entebbe Expressway come online."
+      }
+    ],
+    "order": 4
+  },
+  {
+    "id": "e2020s",
+    "years": "2020s",
+    "title": "Acceleration",
+    "copy": "Karuma lifts national capacity past two thousand megawatts. Industry deepens, and the first barrels of commercial oil come into view.",
+    "image": "photo-journey-2020s-01",
+    "milestones": [
+      {
+        "year": "2024",
+        "text": "The 600 MW Karuma Dam lifts national capacity past 2,000 MW."
+      },
+      {
+        "year": "2026",
+        "text": "Forty years of nation-building — as commercial oil production begins."
+      }
+    ],
+    "order": 5
+  },
+  {
+    "id": "beyond",
+    "years": "Beyond",
+    "title": "The Next Horizon",
+    "copy": "The record does not close; it compounds. The next chapter is capacity — industrial, human, and institutional.",
+    "image": "photo-journey-beyond-01",
+    "milestones": [
+      {
+        "year": "2040",
+        "text": "Vision 2040: a transformed Ugandan society — from a peasant to a modern and prosperous country."
+      }
+    ],
+    "order": 6
+  }
+]

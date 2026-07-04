@@ -1,0 +1,27 @@
+---
+/** Accurate Uganda outline (Natural-Earth-derived; see uganda-map.json). */
+import map from '../data/uganda-map.json';
+
+export interface Props {
+  class?: string;
+  stroke?: string;
+  strokeWidth?: number;
+  fill?: string;
+  /** id for an optional <clipPath> registration */
+  clipId?: string;
+}
+const { class: className = '', stroke = 'currentColor', strokeWidth = 2, fill = 'none', clipId } = Astro.props;
+---
+
+<svg viewBox={map.viewBox} class={className} aria-hidden="true" focusable="false">
+  {
+    clipId && (
+      <defs>
+        <clipPath id={clipId} clipPathUnits="objectBoundingBox">
+          <path d={map.path} transform={`scale(${1 / map.width} ${1 / map.height})`} />
+        </clipPath>
+      </defs>
+    )
+  }
+  <path d={map.path} stroke={stroke} stroke-width={strokeWidth} fill={fill} vector-effect="non-scaling-stroke"></path>
+</svg>

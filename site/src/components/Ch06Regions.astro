@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+import RegionsMap from '../islands/RegionsMap';
+import map from '../data/uganda-map.json';
+
+const regionEntries = (await getCollection('regions')).sort((a, b) => a.data.order - b.data.order);
+const regions = regionEntries.map((r) => r.data);
+---
+
+<Chapter id="regions" num="06" title="The Regions" class="grain">
+  <div class="absolute inset-0 opacity-30" aria-hidden="true">
+    <Pic id="bg-active-dark-01" sizes="100vw" alt="" class="h-full w-full object-cover" />
+  </div>
+
+  <div class="container-wide relative z-10 pb-32 md:pb-44">
+    <div class="mt-10 md:mt-16" data-reveal>
+      <h2 class="heading-1 max-w-[20ch] text-cream" id="regions-title">
+        One country. Many regions.<br />One national record.
+      </h2>
+      <p class="body-copy mt-6 max-w-[52ch] text-mist-bright">
+        Transformation that stops at the capital is not transformation. Roads, power, schools,
+        hospitals, agriculture and refuge — written across the whole map.
+      </p>
+    </div>
+
+    <div class="mt-14 md:mt-20" data-reveal>
+      <RegionsMap client:visible regions={regions} map={map} />
+    </div>
+  </div>
+</Chapter>

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "gdp",
+    "label": "GDP per capita",
+    "from": 330,
+    "to": 986,
+    "prefix": "$",
+    "suffix": "",
+    "fromDisplay": "$330",
+    "toDisplay": "$986",
+    "note": "Roughly a threefold rise in real income per person, sustained across four decades of rapid population growth.",
+    "source": "gdp",
+    "order": 1
+  },
+  {
+    "id": "power",
+    "label": "Electricity generated",
+    "from": 60,
+    "to": 2048,
+    "prefix": "",
+    "suffix": " MW",
+    "fromDisplay": "60 MW",
+    "toDisplay": "2,048 MW",
+    "note": "From one ageing dam to four major hydropower stations on the Nile — a thirty-four-fold rise in installed capacity.",
+    "source": "power",
+    "order": 2
+  },
+  {
+    "id": "poverty",
+    "label": "National poverty rate",
+    "from": 56,
+    "to": 16,
+    "prefix": "",
+    "suffix": "%",
+    "fromDisplay": "56%",
+    "toDisplay": "16%",
+    "note": "Two in three Ugandans lifted clear of poverty as measured against the national line.",
+    "source": "poverty",
+    "order": 3
+  },
+  {
+    "id": "refugees",
+    "label": "Refugees hosted",
+    "from": null,
+    "to": 1.8,
+    "prefix": "",
+    "suffix": "M",
+    "fromDisplay": "—",
+    "toDisplay": "1.8M",
+    "note": "The largest refugee-hosting nation in Africa, under one of the most progressive refugee laws in the world.",
+    "source": "refugees",
+    "order": 4
+  },
+  {
+    "id": "stability",
+    "label": "Years of stability",
+    "from": null,
+    "to": 40,
+    "prefix": "",
+    "suffix": "",
+    "fromDisplay": "—",
+    "toDisplay": "40",
+    "note": "Four decades of unbroken constitutional order — the foundation on which every other figure rests.",
+    "source": "stability",
+    "order": 5
+  }
+]

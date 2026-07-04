@@ -1,0 +1,25 @@
+---
+/** Identity bar — absolute over the hero, quiet, not a sticky app header. */
+---
+
+<header class="absolute inset-x-0 top-0 z-40">
+  <div class="container-wide flex items-center justify-between py-6 md:py-8">
+    <a href="/" class="group flex items-center gap-4" aria-label="Forty Years of Transformation — home">
+      <img src="/favicon.svg" alt="" width="34" height="34" class="h-[34px] w-[34px]" />
+      <span class="leading-tight">
+        <span class="eyebrow block text-cream">Republic of Uganda</span>
+        <span class="stamp block text-mist group-hover:text-gold-hi transition-colors duration-[240ms]"
+          >The Official 40-Year Record</span
+        >
+      </span>
+    </a>
+    <nav aria-label="Record pages" class="hidden items-center gap-8 md:flex">
+      <a href="/sources" class="stamp text-mist-bright transition-colors duration-[240ms] hover:text-gold-hi">Sources</a>
+      <a href="/downloads" class="stamp text-mist-bright transition-colors duration-[240ms] hover:text-gold-hi">Downloads</a>
+      <span class="stamp text-mist" aria-label="Language: English. Luganda and Swahili editions in preparation.">
+        <span class="text-gold" lang="en">EN</span>
+        <span aria-hidden="true"> · LG · SW</span>
+      </span>
+    </nav>
+  </div>
+</header>

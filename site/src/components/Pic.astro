@@ -1,0 +1,73 @@
+---
+/**
+ * Manifest-driven <picture>: AVIF → WebP → JPG at responsive widths,
+ * optional mobile art-direction twin at <768px, LQIP blur-up,
+ * explicit intrinsic dimensions (zero CLS).
+ */
+import manifest from '../data/images.json';
+
+type Variant = {
+  base: string;
+  widths: number[];
+  width: number;
+  height: number;
+};
+type Entry = {
+  desktop: Variant;
+  mobile?: Variant;
+  lqip: string;
+  alt: string;
+};
+
+export interface Props {
+  id: keyof typeof manifest | string;
+  /** sizes attribute; default full-bleed */
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'auto';
+  class?: string;
+  /** override manifest alt (e.g. decorative "") */
+  alt?: string;
+}
+
+const {
+  id,
+  sizes = '100vw',
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  class: className = '',
+  alt,
+} = Astro.props;
+
+const entry = (manifest as Record<string, Entry>)[id as string];
+if (!entry) throw new Error(`Pic: unknown image id "${id}" — run npm run assets`);
+
+const srcset = (v: Variant, ext: string) =>
+  v.widths.map((w) => `${v.base}-${w}.${ext} ${w}w`).join(', ');
+
+const d = entry.desktop;
+const m = entry.mobile;
+const altText = alt ?? entry.alt;
+const fallback = `${d.base}-${d.widths[d.widths.length - 1]}.jpg`;
+---
+
+<picture>
+  {m && <source media="(max-width: 767px)" type="image/avif" srcset={srcset(m, 'avif')} sizes={sizes} />}
+  {m && <source media="(max-width: 767px)" type="image/webp" srcset={srcset(m, 'webp')} sizes={sizes} />}
+  {m && <source media="(max-width: 767px)" type="image/jpeg" srcset={srcset(m, 'jpg')} sizes={sizes} />}
+  <source type="image/avif" srcset={srcset(d, 'avif')} sizes={sizes} />
+  <source type="image/webp" srcset={srcset(d, 'webp')} sizes={sizes} />
+  <img
+    src={fallback}
+    srcset={srcset(d, 'jpg')}
+    sizes={sizes}
+    width={d.width}
+    height={d.height}
+    alt={altText}
+    loading={loading}
+    decoding="async"
+    fetchpriority={fetchpriority}
+    class={`lqip ${className}`}
+    style={`background-image:url("${entry.lqip}")`}
+  />
+</picture>

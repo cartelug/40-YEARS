@@ -1,0 +1,58 @@
+[
+  {
+    "id": "oil",
+    "title": "First Oil",
+    "copy": "With commercial reserves confirmed at Lake Albert, production begins via a pipeline to the coast — revenue for the build-out of everything below.",
+    "stat": "≈230,000 barrels/day at peak",
+    "order": 1
+  },
+  {
+    "id": "industry",
+    "title": "An Industrial Economy",
+    "copy": "From under a hundred factories to thousands — steel, minerals and manufacturing now exporting across the region. The target is a tenfold economy.",
+    "stat": "Vision 2040",
+    "order": 2
+  },
+  {
+    "id": "energy",
+    "title": "Energy in Surplus",
+    "copy": "Clean hydropower beyond domestic demand: the grid becomes an export, and a regional stabiliser.",
+    "stat": "2,048 MW and rising",
+    "order": 3
+  },
+  {
+    "id": "youth",
+    "title": "Youth & Skills",
+    "copy": "The youngest workforce on the continent, moving from classroom to workshop to enterprise — the true carrier of the next forty years.",
+    "stat": "Median age under 18",
+    "order": 4
+  },
+  {
+    "id": "agriculture",
+    "title": "Agriculture, Value-Added",
+    "copy": "Coffee, dairy and grain increasingly processed at home — raw produce leaving as finished goods.",
+    "stat": "Africa's top coffee exporter",
+    "order": 5
+  },
+  {
+    "id": "technology",
+    "title": "Technology & Innovation",
+    "copy": "A digital public infrastructure and a young builder class connecting government, markets and diaspora.",
+    "stat": "The new backbone",
+    "order": 6
+  },
+  {
+    "id": "region",
+    "title": "Regional Leadership",
+    "copy": "A trade hub, a peacekeeping contributor, and the region's most generous host — leadership by evidence, not declaration.",
+    "stat": "East African anchor",
+    "order": 7
+  },
+  {
+    "id": "resilience",
+    "title": "National Resilience",
+    "copy": "Institutions, food security and an energy surplus — capacity to absorb shocks that once would have broken the state.",
+    "stat": "Built to last",
+    "order": 8
+  }
+]

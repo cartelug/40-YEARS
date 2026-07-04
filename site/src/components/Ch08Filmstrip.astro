@@ -1,0 +1,126 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+
+const frames = (await getCollection('frames')).sort((a, b) => a.data.order - b.data.order);
+const total = String(frames.length).padStart(3, '0');
+---
+
+<Chapter id="pictures" num="08" title="In Pictures" variant="obsidian" class="grain">
+  <div class="absolute inset-0 opacity-40" aria-hidden="true">
+    <Pic id="bg-archive-deep-01" sizes="100vw" alt="" class="h-full w-full object-cover" />
+  </div>
+
+  <div class="relative z-10 pb-28 md:pb-40">
+    <div class="container-wide mt-10 flex flex-wrap items-end justify-between gap-8 md:mt-16" data-reveal>
+      <div>
+        <h2 class="heading-1 max-w-[18ch] text-cream" id="pictures-title">
+          The nation, remembered in light.
+        </h2>
+        <p class="body-copy mt-6 max-w-[50ch] text-mist-bright">
+          A curated archive of the land the record was written on. Drag the strip, scroll it,
+          or use the arrow keys.
+        </p>
+      </div>
+      <p class="stamp text-gold tnum lg:pr-14" aria-live="polite">
+        FRAME <span id="film-counter">001</span> / {total}
+      </p>
+    </div>
+
+    <!-- letterbox top bar -->
+    <div class="mt-12 border-y border-line bg-obsidian py-2 md:mt-16" aria-hidden="true">
+      <p class="stamp container-wide flex justify-between text-mist/70">
+        <span>NATIONAL ARCHIVE · SERIES A</span>
+        <span class="tnum">UGANDA · 1986–2026</span>
+      </p>
+    </div>
+
+    <div
+      id="filmstrip"
+      class="scrollbar-film flex snap-x snap-mandatory gap-6 overflow-x-auto bg-obsidian px-[8vw] py-10 md:gap-10"
+      tabindex="0"
+      role="group"
+      aria-roledescription="filmstrip"
+      aria-label="Archive filmstrip: thirteen frames. Scroll horizontally; arrow keys move between frames."
+    >
+      {
+        frames.map((f, i) => (
+          <figure
+            class="film-frame w-[78vw] max-w-[720px] flex-none snap-center border border-line bg-navy p-3 md:w-[52vw] md:p-4"
+            data-frame={i + 1}
+          >
+            <div class="relative overflow-hidden">
+              <div class="film-img">
+                <Pic
+                  id={f.data.image}
+                  sizes="(max-width: 767px) 78vw, 52vw"
+                  class="aspect-[3/2] h-auto w-full object-cover"
+                />
+              </div>
+              <span class="stamp absolute left-3 top-3 bg-obsidian/85 px-2 py-1 text-gold tnum">{f.data.stamp}</span>
+            </div>
+            <figcaption class="flex items-baseline justify-between gap-6 pt-3">
+              <span class="stamp text-mist-bright">{f.data.caption}</span>
+              <span class="stamp whitespace-nowrap text-mist/70">{f.data.place}</span>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <!-- letterbox bottom bar + controls -->
+    <div class="border-y border-line bg-obsidian py-2" aria-hidden="true">
+      <p class="stamp container-wide flex justify-between text-mist/70">
+        <span>13 FRAMES · SILVER HALIDE GRADE</span>
+        <span>THE RECORD, EXPOSED FRAME BY FRAME</span>
+      </p>
+    </div>
+
+    <div class="container-wide mt-8 flex items-center justify-between">
+      <p class="stamp text-mist" data-reveal>Curated — not a gallery dump. Rights: see <a href="/sources#imagery" class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-hi">imagery ledger</a>.</p>
+      <div class="flex gap-3">
+        <button
+          id="film-prev"
+          type="button"
+          class="stamp min-h-11 min-w-11 border border-line px-5 text-mist-bright transition-colors duration-[240ms] hover:border-gold hover:text-gold-hi"
+          aria-label="Previous frame"
+        >
+          ←
+        </button>
+        <button
+          id="film-next"
+          type="button"
+          class="stamp min-h-11 min-w-11 border border-line px-5 text-mist-bright transition-colors duration-[240ms] hover:border-gold hover:text-gold-hi"
+          aria-label="Next frame"
+        >
+          →
+        </button>
+      </div>
+    </div>
+  </div>
+</Chapter>
+
+<style>
+  .scrollbar-film {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold-deep) var(--color-obsidian);
+  }
+  /* Ken Burns — active (centred) frame only, motion-safe */
+  @media (prefers-reduced-motion: no-preference) {
+    .film-img {
+      transform: scale(1);
+    }
+    .film-frame.is-active .film-img {
+      animation: kenburns 9s var(--ease-standard) forwards;
+    }
+    @keyframes kenburns {
+      from {
+        transform: scale(1) translateX(0);
+      }
+      to {
+        transform: scale(1.07) translateX(-1.5%);
+      }
+    }
+  }
+</style>

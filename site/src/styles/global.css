@@ -1,0 +1,383 @@
+@import 'tailwindcss';
+
+/* ————————————————————————————————————————————————————————————————
+   FORTY YEARS OF TRANSFORMATION · REPUBLIC OF UGANDA · 1986–2026
+   Design tokens — Swiss / International Typographic Style,
+   museum-grade. Navy dominant, cream minority, gold the only accent.
+   Every value on the page derives from this file.
+   ———————————————————————————————————————————————————————————————— */
+
+@theme {
+  /* Colour — no gradients, no second accent, no status colours */
+  --color-*: initial;
+  --color-navy: #0b0e14;
+  --color-obsidian: #05070b;
+  --color-raised: #121620;
+  --color-cream: #efe7d6;
+  --color-cream-deep: #e4dac4;
+  --color-gold: #c9a227;
+  --color-gold-hi: #e4c368;
+  --color-gold-deep: #a8851c;
+  --color-ink: #14110b;
+  --color-ink-soft: #3a342a;
+  --color-mist: #8a93a3;
+  --color-mist-bright: #c3c9d2;
+  --color-line: #1e2430;
+  --color-line-cream: #cfc3a6;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Type — one family, hierarchy from weight/size/tracking only */
+  --font-sans:
+    'Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-cond:
+    'Heros Cn', 'Helvetica Neue Condensed', 'Arial Narrow', 'Heros',
+    'Helvetica Neue', Helvetica, sans-serif;
+
+  /* Motion */
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-exit: cubic-bezier(0.7, 0, 0.84, 0);
+  --duration-instant: 120ms;
+  --duration-fast: 240ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
+  --duration-cinematic: 1100ms;
+
+  /* Radius — flat Swiss surfaces; 2px on controls only */
+  --radius-*: initial;
+  --radius-none: 0;
+  --radius-ctl: 2px;
+}
+
+/* ————— Self-hosted Helvetica-class grotesque ——————————————————
+   TeX Gyre Heros (GUST e-foundry, GUST Font Licence — free to embed).
+   The URW Nimbus Sans lineage: the same drawing Linux has always
+   aliased to “Helvetica”. Real Helvetica Neue takes over wherever the
+   platform provides it (declared later in the stack for metrics parity). */
+@font-face {
+  font-family: 'Heros';
+  src: url('/fonts/heros-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Heros';
+  src: url('/fonts/heros-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Heros';
+  src: url('/fonts/heros-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Heros Cn';
+  src: url('/fonts/heros-cn-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Heros Cn';
+  src: url('/fonts/heros-cn-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ————— Base ———————————————————————————————————————————————— */
+@layer base {
+  html {
+    background-color: var(--color-navy);
+    color: var(--color-mist-bright);
+    font-family: var(--font-sans);
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scrollbar-color: var(--color-gold-deep) var(--color-obsidian);
+  }
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+  }
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-navy);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+    border-radius: 0;
+  }
+  button {
+    border-radius: var(--radius-ctl);
+  }
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  [id] {
+    scroll-margin-top: 4rem;
+  }
+}
+
+/* ————— Typographic voice ———————————————————————————————————— */
+@utility display-xl {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+@utility display-l {
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+@utility heading-1 {
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+@utility heading-2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+@utility body-copy {
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  letter-spacing: 0;
+}
+@utility eyebrow {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+@utility stamp {
+  /* mono-caps frame stamp, archival metadata voice */
+  font-weight: 400;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+@utility data-xl {
+  font-weight: 700;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: 'tnum';
+}
+@utility tnum {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* ————— Swiss grid ———————————————————————————————————————————— */
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 24px;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 96px);
+}
+@utility container-wide {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 96px);
+}
+
+/* ————— Seam rule ——————————————————————————————————————————————
+   Every image plate sits on its section colour and fades seam-to-seam,
+   so cover-crops never reveal an edge. */
+@utility seam-dark {
+  position: relative;
+  background-color: var(--color-navy);
+  isolation: isolate;
+}
+@utility seam-cream {
+  position: relative;
+  background-color: var(--color-cream);
+  isolation: isolate;
+}
+.seam-dark::before,
+.seam-dark::after,
+.seam-cream::before,
+.seam-cream::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 22vh;
+  pointer-events: none;
+  z-index: 1;
+}
+.seam-dark::before {
+  top: 0;
+  background: linear-gradient(to bottom, #0b0e14, rgb(11 14 20 / 0));
+}
+.seam-dark::after {
+  bottom: 0;
+  background: linear-gradient(to top, #0b0e14, rgb(11 14 20 / 0));
+}
+.seam-cream::before {
+  top: 0;
+  background: linear-gradient(to bottom, #efe7d6, rgb(239 231 214 / 0));
+}
+.seam-cream::after {
+  bottom: 0;
+  background: linear-gradient(to top, #efe7d6, rgb(239 231 214 / 0));
+}
+
+/* ————— Film grain (dark cinematic frames only, 4%) —————————— */
+@utility grain {
+  position: relative;
+}
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* ————— Hairlines ————————————————————————————————————————————— */
+@utility rule-gold {
+  border: 0;
+  border-top: 1px solid var(--color-gold);
+}
+@utility hairline {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+}
+@utility hairline-cream {
+  border: 0;
+  border-top: 1px solid var(--color-line-cream);
+}
+
+/* ————— Reveal choreography (GSAP adds .is-inview; static without JS) — */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity var(--duration-slow) var(--ease-entrance),
+      transform var(--duration-slow) var(--ease-entrance);
+  }
+  .js [data-reveal].is-inview {
+    opacity: 1;
+    transform: none;
+  }
+  .js [data-reveal-stagger] > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity var(--duration-slow) var(--ease-entrance),
+      transform var(--duration-slow) var(--ease-entrance);
+  }
+  .js [data-reveal-stagger].is-inview > * {
+    opacity: 1;
+    transform: none;
+  }
+  .js [data-reveal-stagger].is-inview > *:nth-child(2) { transition-delay: 80ms; }
+  .js [data-reveal-stagger].is-inview > *:nth-child(3) { transition-delay: 160ms; }
+  .js [data-reveal-stagger].is-inview > *:nth-child(4) { transition-delay: 240ms; }
+  .js [data-reveal-stagger].is-inview > *:nth-child(5) { transition-delay: 320ms; }
+  .js [data-reveal-stagger].is-inview > *:nth-child(6) { transition-delay: 400ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ————— Spine nodes ——————————————————————————————————————————— */
+.spine-node {
+  position: absolute;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  transform: translate(-50%, -50%);
+  border: 1.5px solid var(--color-gold);
+  border-radius: 999px;
+  background: var(--color-navy);
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+.spine-node.is-active {
+  background: var(--color-gold-hi);
+  border-color: var(--color-gold-hi);
+  transform: translate(-50%, -50%) scale(1.25);
+}
+.spine-node-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: var(--color-gold);
+}
+
+/* ————— Journey panel stacking (JS + desktop + motion only) ————— */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .js .journey-panel {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .js .journey-panel:first-child {
+    opacity: 1;
+    visibility: visible;
+  }
+  .js #journey-panels {
+    min-height: 560px;
+  }
+}
+.journey-tick.is-passed {
+  color: var(--color-gold-hi);
+}
+#filmstrip.is-dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
+}
+#filmstrip {
+  cursor: grab;
+}
+
+/* ————— LQIP blur-up ————————————————————————————————————————— */
+@utility lqip {
+  background-size: cover;
+  background-position: center;
+}

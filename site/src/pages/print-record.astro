@@ -1,0 +1,161 @@
+---
+/**
+ * Print master for the PDF edition (scripts/make-pdf.mjs renders this to
+ * /downloads/forty-years-record.pdf). Excluded from sitemap; noindex.
+ */
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+
+const stats = (await getCollection('stats')).sort((a, b) => a.data.order - b.data.order);
+const eras = (await getCollection('eras')).sort((a, b) => a.data.order - b.data.order);
+const pillars = (await getCollection('pillars')).sort((a, b) => a.data.order - b.data.order);
+const regions = (await getCollection('regions')).sort((a, b) => a.data.order - b.data.order);
+const voices = (await getCollection('voices')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forty Years of Transformation · Republic of Uganda · 1986–2026 — Print Edition</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      @page { size: A4; margin: 18mm 16mm; }
+      html { background: #fff; color: #14110b; font-family: 'Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      body { font-size: 10.5pt; line-height: 1.55; margin: 0; }
+      .page { page-break-after: always; }
+      .stamp-p { font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; }
+      .gold { color: #a8851c; }
+      .rule { border: 0; border-top: 1px solid #a8851c; margin: 6mm 0; }
+      h1 { font-size: 34pt; line-height: 1; letter-spacing: -0.02em; margin: 4mm 0; text-transform: uppercase; }
+      h2 { font-size: 17pt; line-height: 1.1; margin: 0 0 3mm; }
+      h3 { font-size: 12pt; margin: 0 0 1.5mm; }
+      table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+      td, th { text-align: left; padding: 2.5mm 0; border-top: 1px solid #cfc3a6; vertical-align: baseline; }
+      .num { font-size: 20pt; font-weight: 700; white-space: nowrap; }
+      .muted { color: #3a342a; }
+      .cols { column-count: 2; column-gap: 8mm; }
+      .keep { break-inside: avoid; }
+    </style>
+  </head>
+  <body>
+    <section class="page">
+      <p class="stamp-p gold">The Official National Record · Republic of Uganda</p>
+      <h1>Forty Years of<br />Transformation</h1>
+      <p class="stamp-p">1986–2026 · Print edition of the national record</p>
+      <hr class="rule" />
+      <p style="max-width: 120mm">
+        From a nation in ruins to a nation on the rise — four decades of peace, growth and
+        rebuilding, told through the numbers, the milestones and the people. This document is
+        the portable edition of the record published at fortyyears.go.ug.
+      </p>
+      <table style="margin-top: 10mm">
+        {
+          stats.map((s) => (
+            <tr class="keep">
+              <td class="num">
+                {s.data.from !== null ? `${s.data.fromDisplay} → ${s.data.toDisplay}` : s.data.toDisplay}
+              </td>
+              <td>
+                <strong>{s.data.label}</strong>
+                <br />
+                <span class="muted">{s.data.note}</span>
+              </td>
+            </tr>
+          ))
+        }
+      </table>
+    </section>
+
+    <section class="page">
+      <p class="stamp-p gold">02 · The Inheritance</p>
+      <h2>The starting point. The inheritance we received.</h2>
+      <p class="muted" style="max-width:120mm">
+        In January 1986 the National Resistance Movement took charge of a state hollowed out by
+        a quarter-century of upheaval: a collapsed economy ($330 per person), darkness after
+        dusk (60 MW from one ageing dam), and a cycle of instability that had normalised the
+        coup. “This is not a mere change of guard — it is a fundamental change,” the nation was
+        told at the swearing-in. The forty years since are the measure of that promise.
+      </p>
+      <hr class="rule" />
+      <p class="stamp-p gold">04 · The Journey</p>
+      <h2>Six eras, one continuous line</h2>
+      <table>
+        {
+          eras.map((e) => (
+            <tr class="keep">
+              <td style="width: 28mm" class="num">{e.data.years}</td>
+              <td>
+                <strong>{e.data.title}.</strong> {e.data.copy}
+                <br />
+                <span class="muted">{e.data.milestones.map((m) => `${m.year} — ${m.text}`).join(' · ')}</span>
+              </td>
+            </tr>
+          ))
+        }
+      </table>
+    </section>
+
+    <section class="page">
+      <p class="stamp-p gold">05 · Achievements</p>
+      <h2>Built on conviction. Delivered for generations.</h2>
+      <div class="cols" style="margin-top:6mm">
+        {
+          pillars.map((p) => (
+            <div class="keep" style="margin-bottom:6mm">
+              <h3>
+                {p.data.num} · {p.data.title}
+              </h3>
+              <p style="margin:0 0 2mm"><em>{p.data.claim}</em></p>
+              <p class="muted" style="margin:0 0 2mm">{p.data.copy}</p>
+              <p class="stamp-p">{p.data.facts.map((f) => `${f.value} ${f.label}`).join(' · ')}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="page">
+      <p class="stamp-p gold">06 · The Regions</p>
+      <h2>One country. Many regions. One national record.</h2>
+      <div class="cols" style="margin-top:6mm">
+        {
+          regions.map((r) => (
+            <div class="keep" style="margin-bottom:6mm">
+              <h3>{r.data.name} Region</h3>
+              <p class="stamp-p muted">{r.data.districts}</p>
+              <p class="stamp-p">{r.data.stats.map((s) => `${s.value} ${s.label}`).join(' · ')}</p>
+              <p class="muted" style="margin:2mm 0 0">{r.data.stories.join(' ')}</p>
+            </div>
+          ))
+        }
+      </div>
+      <hr class="rule" />
+      <p class="stamp-p gold">07 · Voices</p>
+      {
+        voices.map((v) => (
+          <p class="keep" style="max-width:130mm">
+            “{v.data.quote}” <span class="stamp-p muted">— {v.data.name} · {v.data.place} · {v.data.programme}</span>
+          </p>
+        ))
+      }
+    </section>
+
+    <section>
+      <p class="stamp-p gold">10 · The Record Continues</p>
+      <h2>Four decades. One journey. A transformed nation.</h2>
+      <p style="max-width:120mm">
+        Forty years ago, a nation in ruins. Today, a nation on the rise. The work continues —
+        but the distance travelled is a story worth telling, and worth honouring.
+      </p>
+      <p style="margin-top:14mm"><img src="/favicon.svg" width="64" height="64" alt="" /></p>
+      <p class="stamp-p">Signed into the national memory · Kampala · MMXXVI</p>
+      <p class="stamp-p gold">State House · Republic of Uganda</p>
+      <hr class="rule" />
+      <p class="stamp-p muted">
+        Sources: the five approved figures reconcile UBOS, ERA and OPM national series with
+        World Bank and UNHCR data — full provenance ledger at fortyyears.go.ug/sources.
+      </p>
+    </section>
+  </body>
+</html>

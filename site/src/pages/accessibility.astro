@@ -1,0 +1,68 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Accessibility & Languages · Forty Years of Transformation"
+  description="Accessibility statement and language options for the official forty-year record of the Republic of Uganda. Built to WCAG 2.2 AA."
+  path="/accessibility"
+  eyebrow="For Every Citizen"
+  heading="Accessibility & languages"
+  standfirst="A national record belongs to everyone it records. This site is built to WCAG 2.2 AA, tested with keyboard and screen reader, and engineered for the phones and networks Ugandans actually use."
+>
+  <div class="container-wide pb-28 md:pb-40">
+    <div class="grid-12 !px-0 gap-y-16">
+      <section class="col-span-12 md:col-span-6" aria-labelledby="a11y-features">
+        <h2 id="a11y-features" class="eyebrow border-b border-line pb-4 text-mist">What we built in</h2>
+        <ul class="mt-6 space-y-4">
+          {
+            [
+              'Full keyboard access: chapter navigation, the regional map, and the archive filmstrip all operate with Tab, Enter and the arrow keys — with a visible 2px gold focus indicator throughout.',
+              'Reduced motion honoured completely: with “reduce motion” set, the spine appears fully drawn, figures show final values, and all parallax, pinning and Ken Burns effects are disabled.',
+              'Contrast at AA or better on every text/background pair, in both the navy and cream chapters.',
+              'Alternative text on every informative image; decorative plates are hidden from assistive technology.',
+              'One heading hierarchy, landmark regions, and a skip link to the main content.',
+              'Touch targets of at least 24px; no interaction depends on hover.',
+              'Light pages by design: the record loads on a low-end Android phone over a slow connection.',
+            ].map((t) => (
+              <li class="body-copy flex gap-4 text-[0.98rem] text-mist-bright">
+                <span aria-hidden="true" class="mt-[0.7em] inline-block h-px w-5 shrink-0 bg-gold" />
+                {t}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="col-span-12 md:col-span-5 md:col-start-8" aria-labelledby="a11y-lang">
+        <h2 id="a11y-lang" class="eyebrow border-b border-line pb-4 text-mist">Languages</h2>
+        <dl class="mt-6 space-y-6">
+          <div>
+            <dt class="heading-2 text-cream">English</dt>
+            <dd class="body-copy mt-2 text-[0.98rem] text-mist-bright">The founding edition of the record — available now.</dd>
+          </div>
+          <div>
+            <dt class="heading-2 text-cream">Luganda · Oluganda</dt>
+            <dd class="body-copy mt-2 text-[0.98rem] text-mist-bright">
+              In preparation for the anniversary year. The site's content system is already
+              structured for translation, so the Luganda edition will be the same record, not a summary.
+            </dd>
+          </div>
+          <div>
+            <dt class="heading-2 text-cream">Swahili · Kiswahili</dt>
+            <dd class="body-copy mt-2 text-[0.98rem] text-mist-bright">
+              In preparation, in recognition of Uganda's place in the East African Community.
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="eyebrow mt-16 border-b border-line pb-4 text-mist">Feedback</h2>
+        <p class="body-copy mt-6 text-[0.98rem] text-mist-bright">
+          If any part of this record is difficult to use with your assistive technology, the
+          State House digital team wants to know:
+          <a href="mailto:digital@statehouse.go.ug" class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-hi">digital@statehouse.go.ug</a>
+        </p>
+      </section>
+    </div>
+  </div>
+</PageLayout>

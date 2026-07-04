@@ -1,0 +1,125 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+
+const stats = (await getCollection('stats')).sort((a, b) => a.data.order - b.data.order);
+const H1_WORDS = ['Forty', 'Years', 'of', 'Transformation'];
+---
+
+<Chapter id="opening" num="01" title="Opening" noStamp class="grain">
+  <div class="absolute inset-0" aria-hidden="true">
+    <Pic
+      id="bg-hero-01"
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      alt=""
+      class="h-full w-full object-cover"
+    />
+    <!-- legibility scrim: headline zone reads AA over the plate -->
+    <div
+      class="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,14,20,0.88)_0%,rgba(11,14,20,0.55)_42%,rgba(11,14,20,0.12)_68%,rgba(11,14,20,0)_100%)] max-md:bg-[linear-gradient(180deg,rgba(11,14,20,0.62)_0%,rgba(11,14,20,0.18)_38%,rgba(11,14,20,0.82)_82%)]"
+    >
+    </div>
+  </div>
+
+  <div class="relative z-10 flex min-h-[100svh] flex-col">
+    <div class="container-wide flex flex-1 flex-col justify-center pt-28 pb-16 md:pt-32">
+      <p class="eyebrow text-gold" data-hero-fade>The Official National Record</p>
+
+      <h1 class="display-xl mt-6 max-w-[12ch] text-cream md:-ml-[0.06em] md:max-w-none" id="opening-title">
+        {
+          H1_WORDS.map((w, i) => (
+            <span class="hero-word-clip mr-[0.24em] inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] last:mr-0">
+              <span class="hero-word inline-block" style={`animation-delay:${180 + i * 80}ms`}>
+                {w}
+              </span>
+            </span>
+          ))
+        }
+      </h1>
+
+      <p class="eyebrow mt-8 text-mist-bright" data-hero-fade style="animation-delay:640ms">
+        Republic of Uganda · 1986–2026
+      </p>
+
+      <p class="body-copy mt-6 max-w-[46ch] text-mist-bright" data-hero-fade style="animation-delay:760ms">
+        From a nation in ruins to a nation on the rise — four decades of peace, growth and
+        rebuilding, told through the numbers, the milestones and the people.
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-6" data-hero-fade style="animation-delay:880ms">
+        <a
+          href="#inheritance"
+          class="eyebrow inline-flex min-h-12 items-center border border-gold px-8 py-4 text-gold transition-colors duration-[240ms] ease-[var(--ease-standard)] hover:bg-gold hover:text-navy focus-visible:bg-gold focus-visible:text-navy"
+          data-scroll-to
+        >
+          Explore the Record
+        </a>
+        <a
+          href="#journey"
+          class="stamp text-mist-bright transition-colors duration-[240ms] hover:text-gold-hi"
+          data-scroll-to
+        >
+          The Journey ↓
+        </a>
+      </div>
+    </div>
+
+    <!-- Five-figure strip along the base -->
+    <div class="relative border-t border-line/70 bg-navy/72 backdrop-blur-[2px]">
+      <dl class="container-wide grid grid-cols-2 gap-x-6 gap-y-5 py-6 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-10">
+        {
+          stats.map((s) => (
+            <div class="min-w-0" data-hero-fade style="animation-delay:1000ms">
+              <dd class="tnum text-[1.35rem] font-bold leading-tight text-cream">
+                {s.data.from !== null ? (
+                  <>
+                    <span class="text-mist">{s.data.fromDisplay}</span>
+                    <span aria-hidden="true" class="px-1 text-gold">
+                      →
+                    </span>
+                    <span class="sr-only">to</span>
+                    {s.data.toDisplay}
+                  </>
+                ) : (
+                  s.data.toDisplay
+                )}
+              </dd>
+              <dt class="stamp mt-1 text-mist">{s.data.label}</dt>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</Chapter>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-word {
+      transform: translateY(112%);
+      animation: hero-word-up 0.9s var(--ease-entrance) forwards;
+    }
+    [data-hero-fade] {
+      opacity: 0;
+      animation: hero-fade 0.9s var(--ease-entrance) forwards;
+    }
+    @keyframes hero-word-up {
+      to {
+        transform: translateY(0);
+      }
+    }
+    @keyframes hero-fade {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+</style>

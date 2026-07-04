@@ -1,0 +1,146 @@
+[
+  {
+    "id": "economy",
+    "num": "01",
+    "title": "Economy & Livelihoods",
+    "claim": "From collapse to one of Africa's steadier growth stories.",
+    "copy": "The government of 1986 inherited hyperinflation and a broken currency. Reform came in sequence — recovery programme, currency, revenue institutions — and held. Real income per person has roughly tripled, and the economy has diversified far beyond subsistence farming.",
+    "facts": [
+      {
+        "value": "3×",
+        "label": "real income per person since 1986"
+      },
+      {
+        "value": "~6.5%",
+        "label": "average annual growth across the arc"
+      },
+      {
+        "value": "~5,000",
+        "label": "factories operating, from 80"
+      }
+    ],
+    "image": "photo-achv-economy-01",
+    "align": "left",
+    "order": 1
+  },
+  {
+    "id": "energy",
+    "num": "02",
+    "title": "Energy & Infrastructure",
+    "claim": "The lights came on — and stayed on.",
+    "copy": "From a single ageing dam generating sixty megawatts, four major hydropower stations on the Nile — led by the 600 MW Karuma — have lifted national capacity past two thousand. Expressways, new Nile bridges and a revived national airline reconnected the country and its neighbours.",
+    "facts": [
+      {
+        "value": "2,048 MW",
+        "label": "installed capacity, from 60 MW"
+      },
+      {
+        "value": "600 MW",
+        "label": "Karuma — the nation's largest plant"
+      },
+      {
+        "value": "51 km",
+        "label": "Kampala–Entebbe Expressway"
+      }
+    ],
+    "image": "photo-achv-energy-01",
+    "align": "right",
+    "order": 2
+  },
+  {
+    "id": "social",
+    "num": "03",
+    "title": "Social Progress",
+    "claim": "Poverty fell from more than half the nation to one in six.",
+    "copy": "Against the national line, poverty has fallen from 56 percent to 16. Parish-level programmes, water links, rural electrification and enterprise funds carried the gains beyond the capital, into the villages where most Ugandans live.",
+    "facts": [
+      {
+        "value": "16%",
+        "label": "national poverty rate, from 56%"
+      },
+      {
+        "value": "51%",
+        "label": "of households with electricity, from ~12%"
+      },
+      {
+        "value": "1,200+",
+        "label": "new piped-water connections in the central region alone"
+      }
+    ],
+    "image": "photo-achv-social-01",
+    "align": "left",
+    "order": 3
+  },
+  {
+    "id": "human",
+    "num": "04",
+    "title": "Health, Education & Human Capital",
+    "claim": "A classroom for every child; a turnaround the world studied.",
+    "copy": "Uganda was the first country in sub-Saharan Africa to confront HIV openly — prevalence fell by around seventy percent through the 1990s, a decline researchers compared to a highly effective vaccine. Universal Primary Education, from 1997, lifted adult literacy from 43 percent to above 70.",
+    "facts": [
+      {
+        "value": "~70%",
+        "label": "fall in HIV prevalence through the 1990s"
+      },
+      {
+        "value": "1997",
+        "label": "Universal Primary Education opens the gates"
+      },
+      {
+        "value": "70%+",
+        "label": "adult literacy, from 43%"
+      }
+    ],
+    "image": null,
+    "align": "right",
+    "order": 4
+  },
+  {
+    "id": "regional",
+    "num": "05",
+    "title": "Regional Responsibility",
+    "claim": "Africa's most generous open door.",
+    "copy": "Uganda hosts about 1.8 million refugees — more than any other African country — under the 2006 Refugee Act, widely regarded as among the most progressive in the world. Not camps behind fences: a plot of land, freedom of movement, the right to work. The world calls it the Uganda Model.",
+    "facts": [
+      {
+        "value": "1.8M",
+        "label": "refugees hosted — Africa's largest"
+      },
+      {
+        "value": "2006",
+        "label": "landmark Refugee Act"
+      },
+      {
+        "value": "Bidi Bidi",
+        "label": "among the world's largest settlements, in Yumbe"
+      }
+    ],
+    "image": "photo-achv-regional-01",
+    "align": "left",
+    "order": 5
+  },
+  {
+    "id": "stability",
+    "num": "06",
+    "title": "Stability & Continuity",
+    "claim": "The foundation of everything else.",
+    "copy": "After decades defined by coups and civil war, four decades of constitutional order became the precondition for every other line in this record. Investment, schooling, health and growth all rest on it.",
+    "facts": [
+      {
+        "value": "40",
+        "label": "years of unbroken stability"
+      },
+      {
+        "value": "1986",
+        "label": "the turning point"
+      },
+      {
+        "value": "1995",
+        "label": "the constitution that holds"
+      }
+    ],
+    "image": "photo-achv-stability-01",
+    "align": "right",
+    "order": 6
+  }
+]

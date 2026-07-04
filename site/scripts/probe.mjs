@@ -1,0 +1,26 @@
+import { chromium } from 'playwright-core';
+import { createServer } from 'node:http';
+import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+const DIST = '/home/user/40-YEARS/site/dist';
+const MIME = { '.html':'text/html','.css':'text/css','.js':'text/javascript','.avif':'image/avif','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.json':'application/json' };
+const server = createServer(async (req,res)=>{ try{ let p=decodeURIComponent(new URL(req.url,'http://x').pathname); let f=path.join(DIST,p); if(existsSync(f)&&!path.extname(f)) f=path.join(f,'index.html'); if(!existsSync(f)) f=path.join(DIST,p+'.html'); const e=path.extname(f); res.writeHead(200,{'content-type':MIME[e]??'application/octet-stream'}); res.end(await readFile(f)); }catch{res.writeHead(404).end();} });
+await new Promise(r=>server.listen(4174,r));
+const browser = await chromium.launch({ executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome', args:['--no-sandbox'] });
+const page = await browser.newPage({ viewport:{width:1440,height:900} });
+const errors = [];
+page.on('console', m => { if (['error','warning'].includes(m.type())) errors.push(m.type()+': '+m.text()); });
+page.on('pageerror', e => errors.push('PAGEERROR: '+e.message));
+await page.goto('http://localhost:4174/', { waitUntil:'networkidle' });
+await page.waitForTimeout(1500);
+const diag = await page.evaluate(() => {
+  const p = document.querySelectorAll('.journey-panel');
+  const st = Array.from(p).map(el => { const cs = getComputedStyle(el); return { pos: cs.position, op: cs.opacity, vis: cs.visibility }; });
+  const st2 = 0;
+  const pin = document.getElementById('journey-pin');
+  return { panels: st, pinH: pin?.offsetHeight, hasJs: document.documentElement.classList.contains('js') };
+});
+console.log(JSON.stringify(diag,null,1));
+console.log('ERRORS:', errors.slice(0,10));
+await browser.close(); server.close();

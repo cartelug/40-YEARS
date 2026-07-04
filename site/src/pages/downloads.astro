@@ -1,0 +1,64 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const ITEMS = [
+  {
+    href: '/downloads/forty-years-record.pdf',
+    title: 'The Record — print edition (PDF)',
+    desc: 'The full forty-year record as a signed document: the inheritance, the five figures, the journey, the pillars, the regions and the close. Formatted for A4.',
+    meta: 'PDF · A4 · English',
+  },
+  {
+    href: '/images/social/og-cover.jpg',
+    title: 'Cover image',
+    desc: 'The official share image of the record — the portrait fused with the gold contour of the nation.',
+    meta: 'JPG · 1200×630',
+  },
+  {
+    href: '/images/bg/bg-hero-01-desktop-1672.jpg',
+    title: 'Hero plate — full resolution',
+    desc: 'The opening plate of the record, for press and partner use with attribution.',
+    meta: 'JPG · 1672×941',
+  },
+  {
+    href: '/favicon.svg',
+    title: 'The 40-tick mark (SVG)',
+    desc: 'The anniversary mark: forty ticks, one for each year, around the national centre.',
+    meta: 'SVG · vector',
+  },
+];
+---
+
+<PageLayout
+  title="Downloads · Forty Years of Transformation"
+  description="Download the official forty-year record of the Republic of Uganda as a PDF, together with the media pack for press and partners."
+  path="/downloads"
+  eyebrow="Take the Record With You"
+  heading="Downloads & media pack"
+  standfirst="The record in portable form — the print edition for reading and archiving, and the media pack for press and partners. Attribution: “Forty Years of Transformation · Republic of Uganda · 1986–2026.”"
+>
+  <div class="container-wide pb-28 md:pb-40">
+    <ul>
+      {
+        ITEMS.map((d) => (
+          <li class="border-b border-line first:border-t">
+            <a href={d.href} download class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 py-8 transition-colors duration-[240ms] md:py-10">
+              <span class="heading-2 col-span-12 text-cream transition-colors duration-[240ms] group-hover:text-gold-hi md:col-span-4">
+                {d.title}
+              </span>
+              <span class="body-copy col-span-12 max-w-[52ch] text-[0.95rem] text-mist-bright md:col-span-5">{d.desc}</span>
+              <span class="stamp col-span-8 text-mist md:col-span-2 tnum">{d.meta}</span>
+              <span class="stamp col-span-4 text-right text-gold md:col-span-1" aria-hidden="true">
+                ↓
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="stamp mt-10 max-w-[64ch] text-mist">
+      Usage: editorial and commemorative use permitted with attribution. The five approved
+      figures must be quoted with their baselines — see <a href="/sources" class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-hi">sources & methodology</a>.
+    </p>
+  </div>
+</PageLayout>

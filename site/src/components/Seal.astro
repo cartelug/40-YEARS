@@ -1,0 +1,113 @@
+---
+/**
+ * The 40-year seal — draws/embosses on enter (pathLength=1 stroke trick).
+ * Static and fully drawn without JS or under reduced motion.
+ */
+import map from '../data/uganda-map.json';
+
+export interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+
+const ticks = Array.from({ length: 40 }, (_, i) => {
+  const a = (i / 40) * Math.PI * 2 - Math.PI / 2;
+  const long = i % 10 === 0;
+  const r1 = long ? 150 : 158;
+  const r2 = 170;
+  return {
+    x1: 240 + r1 * Math.cos(a),
+    y1: 240 + r1 * Math.sin(a),
+    x2: 240 + r2 * Math.cos(a),
+    y2: 240 + r2 * Math.sin(a),
+    long,
+  };
+});
+---
+
+<svg
+  viewBox="0 0 480 480"
+  class={`seal ${className}`}
+  role="img"
+  aria-label="Ceremonial seal: forty years of transformation, Republic of Uganda, 1986 to 2026"
+  data-seal
+>
+  <defs>
+    <path id="seal-arc-top" d="M 240 40 A 200 200 0 0 1 240 440" fill="none"></path>
+    <path id="seal-arc-bottom" d="M 240 440 A 200 200 0 0 1 240 40" fill="none"></path>
+  </defs>
+
+  <circle cx="240" cy="240" r="228" fill="none" stroke="#A8851C" stroke-width="1" pathLength="1" class="seal-draw"></circle>
+  <circle cx="240" cy="240" r="188" fill="none" stroke="#A8851C" stroke-width="1" pathLength="1" class="seal-draw" style="transition-delay:150ms"></circle>
+
+  <text class="seal-text" fill="#14110B" font-size="17" letter-spacing="4.5" font-weight="700">
+    <textPath href="#seal-arc-top" startOffset="50%" text-anchor="middle">FORTY YEARS OF TRANSFORMATION</textPath>
+  </text>
+  <text class="seal-text" fill="#14110B" font-size="17" letter-spacing="4.5" font-weight="700" style="transition-delay:250ms">
+    <textPath href="#seal-arc-bottom" startOffset="50%" text-anchor="middle">REPUBLIC OF UGANDA · MCMLXXXVI–MMXXVI</textPath>
+  </text>
+
+  <g>
+    {
+      ticks.map((t, i) => (
+        <line
+          x1={t.x1}
+          y1={t.y1}
+          x2={t.x2}
+          y2={t.y2}
+          stroke="#A8851C"
+          stroke-width={t.long ? 2.4 : 1.1}
+          pathLength="1"
+          class="seal-draw"
+          style={`transition-delay:${300 + i * 18}ms`}
+        />
+      ))
+    }
+  </g>
+
+  <g class="seal-text" style="transition-delay:600ms">
+    <path
+      d={map.path}
+      transform="translate(207 100) scale(0.066 0.066)"
+      fill="none"
+      stroke="#A8851C"
+      stroke-width="18"
+    ></path>
+  </g>
+
+  <text
+    x="240"
+    y="292"
+    text-anchor="middle"
+    font-size="132"
+    font-weight="700"
+    fill="#14110B"
+    class="seal-text tnum"
+    style="transition-delay:500ms"
+  >
+    40
+  </text>
+  <text x="240" y="330" text-anchor="middle" font-size="17" letter-spacing="6" fill="#3A342A" class="seal-text" style="transition-delay:650ms">
+    1986–2026
+  </text>
+</svg>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .seal .seal-draw {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      transition: stroke-dashoffset var(--duration-cinematic) var(--ease-standard);
+    }
+    :global(.js) .seal .seal-text {
+      opacity: 0;
+      transition: opacity var(--duration-slow) var(--ease-entrance);
+    }
+    :global(.js) .seal.is-inview .seal-draw {
+      stroke-dashoffset: 0;
+    }
+    :global(.js) .seal.is-inview .seal-text {
+      opacity: 1;
+    }
+  }
+</style>

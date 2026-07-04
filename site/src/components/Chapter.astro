@@ -1,0 +1,44 @@
+---
+/**
+ * Chapter shell — one documentary sequence of the scroll.
+ * Provides: anchor id, seam rule surface, chapter stamp, spine node hook.
+ */
+export interface Props {
+  id: string;
+  num: string;
+  title: string;
+  variant?: 'dark' | 'cream' | 'obsidian';
+  /** extra classes on <section> */
+  class?: string;
+  /** suppress the printed chapter stamp (hero handles its own) */
+  noStamp?: boolean;
+}
+const { id, num, title, variant = 'dark', class: className = '', noStamp = false } = Astro.props;
+const surface =
+  variant === 'cream' ? 'seam-cream text-ink' : variant === 'obsidian' ? 'seam-dark bg-obsidian' : 'seam-dark';
+---
+
+<section
+  id={id}
+  data-chapter={num}
+  data-chapter-title={title}
+  data-variant={variant}
+  class={`${surface} relative ${className}`}
+  aria-labelledby={`${id}-title`}
+>
+  {
+    !noStamp && (
+      <p
+        class={`stamp relative z-10 pt-24 md:pt-40 ${variant === 'cream' ? 'text-ink-soft' : 'text-mist'}`}
+        data-reveal
+      >
+        <span class="container-wide flex items-baseline gap-4">
+          <span class="text-gold tnum">{num}</span>
+          <span aria-hidden="true" class="inline-block h-px w-10 translate-y-[-3px] bg-gold" />
+          <span>{title}</span>
+        </span>
+      </p>
+    )
+  }
+  <slot />
+</section>

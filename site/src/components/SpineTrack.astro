@@ -1,0 +1,19 @@
+---
+/**
+ * The transformation spine — the one aesthetic risk, spent here.
+ * A vertical gold line drawing itself 1986 → 2026 down the whole record,
+ * with a node at every chapter. Scrubbed linear to scroll (home.ts);
+ * fully drawn when JS or motion is unavailable.
+ */
+---
+
+<div
+  id="spine"
+  aria-hidden="true"
+  class="pointer-events-none absolute bottom-0 left-[14px] top-[92vh] z-30 hidden w-px sm:block md:left-[max(20px,calc((100vw-min(100vw-2*clamp(20px,5vw,96px),1440px))/2/2))]"
+>
+  <div class="absolute inset-0 bg-line"></div>
+  <div id="spine-progress" class="absolute inset-0 origin-top bg-gold" style="transform:scaleY(1)"></div>
+  <div id="spine-year-start" class="stamp absolute -top-6 left-1/2 -translate-x-1/2 text-gold tnum">1986</div>
+  <div id="spine-nodes" class="absolute inset-0"></div>
+</div>

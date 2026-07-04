@@ -1,0 +1,91 @@
+---
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+
+const RUINS = [
+  {
+    n: 'I',
+    title: 'A collapsed economy',
+    copy: 'Hyperinflation and a broken currency, after years of conflict and misrule.',
+    value: '$330',
+    label: 'GDP per capita · 1986',
+  },
+  {
+    n: 'II',
+    title: 'Darkness after dusk',
+    copy: 'One ageing dam, just sixty megawatts, and firewood meeting almost all energy.',
+    value: '60 MW',
+    label: 'national generation · 1986',
+  },
+  {
+    n: 'III',
+    title: 'A cycle of instability',
+    copy: 'Decades of coups, dictatorship and civil war — a nation desperate for peace.',
+    value: '56%',
+    label: 'living in poverty',
+  },
+];
+---
+
+<Chapter id="inheritance" num="02" title="The Inheritance" class="grain">
+  <div class="absolute inset-0 opacity-70" aria-hidden="true">
+    <Pic id="bg-quiet-dark-01" sizes="100vw" alt="" class="h-full w-full object-cover" />
+  </div>
+
+  <div class="container-wide relative z-10 pb-32 md:pb-44">
+    <div class="grid-12 !px-0 mt-10 md:mt-16">
+      <div class="col-span-12 md:col-span-7" data-reveal>
+        <h2 class="heading-1 text-cream" id="inheritance-title">
+          The starting point.<br />The inheritance we received.
+        </h2>
+        <p class="body-copy mt-8 max-w-[52ch] text-mist-bright">
+          In January 1986 the National Resistance Movement took charge of a state that had been
+          hollowed out by a quarter-century of upheaval. This chapter records that starting
+          point plainly — not to dramatise it, but because the distance travelled cannot be
+          measured without it.
+        </p>
+      </div>
+    </div>
+
+    <!-- Letterboxed archival title card -->
+    <figure
+      class="relative mx-auto mt-20 max-w-4xl border-y border-line bg-obsidian md:mt-28"
+      data-reveal
+    >
+      <div class="flex min-h-[38vh] flex-col items-start justify-center px-6 py-16 md:px-16 md:py-24">
+        <blockquote class="display-l max-w-[22ch] text-cream">
+          “This is not a mere change of guard — it is a <em class="not-italic text-gold-hi">fundamental change</em>.”
+        </blockquote>
+        <figcaption class="stamp mt-8 text-mist">
+          Spoken at the swearing-in · Kampala · January 1986
+        </figcaption>
+      </div>
+      <span class="stamp absolute left-4 top-3 text-mist/70 md:left-6" aria-hidden="true">Archive · 1986</span>
+      <span class="stamp absolute right-4 top-3 text-mist/70 md:right-6" aria-hidden="true">Kampala</span>
+    </figure>
+
+    <!-- The three ruins — evidence rows, not cards -->
+    <ol class="mt-20 md:mt-28" data-reveal-stagger>
+      {
+        RUINS.map((r) => (
+          <li class="grid grid-cols-12 items-baseline gap-x-6 gap-y-3 border-t border-line py-8 last:border-b md:py-10">
+            <span class="stamp col-span-2 text-gold md:col-span-1" aria-hidden="true">
+              {r.n}
+            </span>
+            <h3 class="heading-2 col-span-10 text-cream md:col-span-4">{r.title}</h3>
+            <p class="body-copy col-span-10 col-start-3 text-mist-bright md:col-span-4 md:col-start-6">{r.copy}</p>
+            <p class="col-span-10 col-start-3 md:col-span-2 md:col-start-11 md:text-right">
+              <span class="tnum block text-[2rem] font-bold leading-none text-cream">{r.value}</span>
+              <span class="stamp mt-2 block text-mist">{r.label}</span>
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="stamp mt-16 max-w-[60ch] text-mist md:mt-20" data-reveal>
+      From this baseline, the record that follows — every figure verified against the sources
+      ledger — is the measure of forty years.
+    </p>
+  </div>
+</Chapter>

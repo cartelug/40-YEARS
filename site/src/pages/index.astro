@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SpineTrack from '../components/SpineTrack.astro';
+import ChapterNav from '../components/ChapterNav.astro';
+import ConsentNotice from '../components/ConsentNotice.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Ch01Opening from '../components/Ch01Opening.astro';
+import Ch02Inheritance from '../components/Ch02Inheritance.astro';
+import Ch03Ledger from '../components/Ch03Ledger.astro';
+import Ch04Journey from '../components/Ch04Journey.astro';
+import Ch05Achievements from '../components/Ch05Achievements.astro';
+import Ch06Regions from '../components/Ch06Regions.astro';
+import Ch07Voices from '../components/Ch07Voices.astro';
+import Ch08Filmstrip from '../components/Ch08Filmstrip.astro';
+import Ch09Next from '../components/Ch09Next.astro';
+import Ch10Close from '../components/Ch10Close.astro';
+
+const CHAPTERS = [
+  { id: 'opening', num: '01', title: 'Opening' },
+  { id: 'inheritance', num: '02', title: 'The Inheritance' },
+  { id: 'ledger', num: '03', title: 'By the Numbers' },
+  { id: 'journey', num: '04', title: 'The Journey' },
+  { id: 'achievements', num: '05', title: 'Achievements' },
+  { id: 'regions', num: '06', title: 'The Regions' },
+  { id: 'voices', num: '07', title: 'Voices' },
+  { id: 'pictures', num: '08', title: 'In Pictures' },
+  { id: 'next', num: '09', title: 'What’s Next' },
+  { id: 'close', num: '10', title: 'The Record Continues' },
+];
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'The Record', item: 'https://fortyyears.go.ug/' },
+    { '@type': 'ListItem', position: 2, name: 'Sources & Methodology', item: 'https://fortyyears.go.ug/sources' },
+    { '@type': 'ListItem', position: 3, name: 'Downloads', item: 'https://fortyyears.go.ug/downloads' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Forty Years of Transformation · Republic of Uganda · 1986–2026"
+  description="The official forty-year national record of the Republic of Uganda — from a nation in ruins to a nation on the rise. Ten chapters of evidence: the inheritance, the numbers, the journey, the achievements, the regions, the voices."
+  path="/"
+  jsonLd={[breadcrumb]}
+>
+  <SiteHeader />
+  <ChapterNav chapters={CHAPTERS} />
+
+  <main id="main" class="relative">
+    <SpineTrack />
+    <Ch01Opening />
+    <Ch02Inheritance />
+    <Ch03Ledger />
+    <Ch04Journey />
+    <Ch05Achievements />
+    <Ch06Regions />
+    <Ch07Voices />
+    <Ch08Filmstrip />
+    <Ch09Next />
+    <Ch10Close />
+  </main>
+
+  <SiteFooter />
+  <ConsentNotice />
+
+  <script>
+    import '../lib/home.ts';
+  </script>
+</BaseLayout>

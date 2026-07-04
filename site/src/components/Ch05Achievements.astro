@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+
+const pillars = (await getCollection('pillars')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Chapter id="achievements" num="05" title="Achievements">
+  <div class="container-wide relative z-10 pb-28 md:pb-40">
+    <div class="mt-10 md:mt-16" data-reveal>
+      <h2 class="heading-1 max-w-[18ch] text-cream" id="achievements-title">
+        Built on conviction.<br />Delivered for generations.
+      </h2>
+      <p class="body-copy mt-6 max-w-[52ch] text-mist-bright">
+        A national atlas in six pillars — what changed in daily life, and the evidence for it.
+      </p>
+    </div>
+
+    <div class="mt-16 md:mt-24">
+      {
+        pillars.map((p) => (
+          <article
+            class="grid grid-cols-12 gap-x-6 gap-y-8 border-t border-line py-14 last:border-b md:py-20"
+            data-reveal
+            aria-labelledby={`pillar-${p.data.id}`}
+          >
+            <header class={`col-span-12 md:col-span-5 ${p.data.align === 'right' ? 'md:order-2 md:col-start-8' : ''}`}>
+              <p class="stamp text-gold tnum">Pillar {p.data.num}</p>
+              <h3 id={`pillar-${p.data.id}`} class="heading-2 mt-3 text-cream">
+                {p.data.title}
+              </h3>
+              <p class="display-l mt-6 !text-[clamp(1.5rem,2.6vw,2.4rem)] !leading-[1.15] text-mist-bright">
+                {p.data.claim}
+              </p>
+              <p class="body-copy mt-6 text-mist-bright">{p.data.copy}</p>
+              <dl class="mt-8">
+                {p.data.facts.map((f) => (
+                  <div class="flex items-baseline gap-4 border-t border-line py-3 last:border-b">
+                    <dd class="tnum min-w-[7.5rem] text-[1.4rem] font-bold leading-tight text-gold-hi">{f.value}</dd>
+                    <dt class="stamp text-mist">{f.label}</dt>
+                  </div>
+                ))}
+              </dl>
+            </header>
+
+            <div class={`col-span-12 md:col-span-6 ${p.data.align === 'right' ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}>
+              {p.data.image ? (
+                <figure class="relative h-full min-h-[280px]">
+                  <Pic
+                    id={p.data.image}
+                    sizes="(max-width: 767px) 92vw, 46vw"
+                    class="h-full w-full object-cover"
+                  />
+                  <figcaption class="stamp absolute bottom-0 left-0 bg-obsidian/85 px-4 py-2 text-mist">
+                    Pillar {p.data.num} · {p.data.title}
+                  </figcaption>
+                </figure>
+              ) : (
+                <div class="flex h-full min-h-[280px] flex-col justify-center border border-line bg-raised px-8 py-12 md:px-12">
+                  <p class="stamp text-mist">In place of a photograph</p>
+                  <p class="display-l mt-6 !text-[clamp(1.8rem,3.4vw,3rem)] !leading-[1.1] text-cream">
+                    “A decline researchers compared to a highly effective <span class="text-gold-hi">vaccine</span>.”
+                  </p>
+                  <p class="stamp mt-6 text-mist">
+                    On Uganda's HIV turnaround · archival photography awaited from the Presidential Press Unit
+                  </p>
+                </div>
+              )}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Chapter>

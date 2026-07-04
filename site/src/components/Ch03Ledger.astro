@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+import UgandaOutline from './UgandaOutline.astro';
+
+const stats = (await getCollection('stats')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Chapter id="ledger" num="03" title="By the Numbers" variant="cream">
+  <div class="absolute inset-0 opacity-80" aria-hidden="true">
+    <Pic id="bg-ledger-paper-01" sizes="100vw" alt="" class="h-full w-full object-cover" />
+  </div>
+
+  <div class="container-wide relative z-10 pb-32 md:pb-44">
+    <div class="mt-10 flex flex-col justify-between gap-10 md:mt-16 md:flex-row md:items-end">
+      <div data-reveal>
+        <h2 class="heading-1 max-w-[16ch] text-ink" id="ledger-title">The National Ledger</h2>
+        <p class="body-copy mt-6 max-w-[48ch] text-ink-soft">
+          Measured progress. Real national change. Five figures carry this record — each one
+          audited against public series and entered here as the nation's account of itself.
+        </p>
+      </div>
+      <p class="stamp text-ink-soft" data-reveal>1986 → 2026 · All figures — <a href="/sources" class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-deep">sources & methodology</a></p>
+    </div>
+
+    <div class="relative mt-16 md:mt-20">
+      <!-- Uganda outline as the ledger watermark -->
+      <div class="pointer-events-none absolute -right-8 top-1/2 hidden w-[420px] -translate-y-1/2 opacity-[0.1] lg:block" aria-hidden="true">
+        <UgandaOutline class="w-full text-ink" strokeWidth={2.5} />
+      </div>
+
+      <dl>
+        {
+          stats.map((s, i) => (
+            <div
+              class="grid grid-cols-12 items-end gap-x-6 gap-y-2 border-t border-gold/70 py-8 last-of-type:border-b md:py-10"
+              data-reveal
+            >
+              <dt class="col-span-12 md:col-span-4">
+                <span class="stamp text-ink-soft tnum">{String(i + 1).padStart(2, '0')}</span>
+                <span class="heading-2 mt-2 block text-ink">{s.data.label}</span>
+              </dt>
+              <dd class="col-span-12 md:col-span-5">
+                <a
+                  href={`/sources#${s.data.source}`}
+                  class="group inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep"
+                  aria-label={`${s.data.label}: ${s.data.from !== null ? `${s.data.fromDisplay} in 1986, ${s.data.toDisplay} today` : s.data.toDisplay}. Read the source.`}
+                >
+                  <span class="data-xl block whitespace-nowrap text-ink" aria-hidden="true">
+                    {s.data.from !== null && (
+                      <>
+                        <span class="text-[0.55em] font-bold text-ink-soft">{s.data.fromDisplay}</span>
+                        <span class="px-2 text-[0.55em] text-gold-deep">→</span>
+                      </>
+                    )}
+                    <span
+                      class="tnum"
+                      data-count={s.data.from !== null ? s.data.to : null}
+                      data-count-prefix={s.data.prefix}
+                      data-count-suffix={s.data.suffix}
+                      data-count-from={s.data.from}
+                    >
+                      {s.data.toDisplay}
+                    </span>
+                  </span>
+                  <span class="stamp mt-1 block text-ink-soft transition-colors duration-[240ms] group-hover:text-gold-deep">
+                    {s.data.from !== null ? '1986 → today' : s.data.id === 'stability' ? '1986–2026' : 'today'} · view source ↗
+                  </span>
+                </a>
+              </dd>
+              <dd class="body-copy col-span-12 max-w-[38ch] text-ink-soft md:col-span-3">{s.data.note}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</Chapter>

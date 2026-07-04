@@ -1,0 +1,158 @@
+[
+  {
+    "id": "central",
+    "name": "Central",
+    "districts": "Kampala · Wakiso · Mukono · Masaka",
+    "node": [
+      540,
+      762
+    ],
+    "stats": [
+      {
+        "value": "#1",
+        "label": "industrial hub"
+      },
+      {
+        "value": "1,200+",
+        "label": "new water links"
+      }
+    ],
+    "stories": [
+      "The Kampala–Entebbe Expressway — the flagship modern highway.",
+      "The densest factory belt and industrial parks in the nation.",
+      "The Parish Development Model rolled out across its districts.",
+      "Piped-water extensions reaching fast-growing suburbs."
+    ],
+    "signals": [
+      "roads",
+      "industry",
+      "water",
+      "agriculture"
+    ],
+    "cities": [
+      "kampala",
+      "entebbe",
+      "masaka",
+      "namanve"
+    ],
+    "order": 1
+  },
+  {
+    "id": "eastern",
+    "name": "Eastern",
+    "districts": "Jinja · Mbale · Soroti · Tororo",
+    "node": [
+      745,
+      588
+    ],
+    "stats": [
+      {
+        "value": "2",
+        "label": "dams on the Nile"
+      },
+      {
+        "value": "50 MW",
+        "label": "grid solar"
+      }
+    ],
+    "stories": [
+      "Isimba and Bujagali hydropower stations on the Victoria Nile.",
+      "Soroti and Tororo solar plants feeding the national grid.",
+      "Grain and produce value-addition mills for cooperatives.",
+      "Jinja's revival as an industrial and tourism centre."
+    ],
+    "signals": [
+      "power",
+      "solar",
+      "agriculture",
+      "industry"
+    ],
+    "cities": [
+      "jinja",
+      "mbale",
+      "soroti",
+      "kiira"
+    ],
+    "order": 2
+  },
+  {
+    "id": "northern",
+    "name": "Northern",
+    "districts": "Gulu · Lira · Arua · Moroto",
+    "node": [
+      470,
+      282
+    ],
+    "stats": [
+      {
+        "value": "600 MW",
+        "label": "Karuma Dam"
+      },
+      {
+        "value": "#1",
+        "label": "recovery story"
+      }
+    ],
+    "stories": [
+      "The 600 MW Karuma Dam — the nation's largest power plant.",
+      "Recovery and rebuilding across the post-conflict north.",
+      "West Nile electrification reaching long-isolated districts.",
+      "Home to Bidi Bidi, among the world's largest refugee settlements."
+    ],
+    "signals": [
+      "power",
+      "recovery",
+      "refuge",
+      "schools"
+    ],
+    "cities": [
+      "gulu",
+      "lira",
+      "arua",
+      "moroto",
+      "karuma",
+      "yumbe"
+    ],
+    "order": 3
+  },
+  {
+    "id": "western",
+    "name": "Western",
+    "districts": "Mbarara · Hoima · Fort Portal · Kabale",
+    "node": [
+      198,
+      742
+    ],
+    "stats": [
+      {
+        "value": "230k",
+        "label": "barrels/day at peak"
+      },
+      {
+        "value": "#1",
+        "label": "oil region"
+      }
+    ],
+    "stories": [
+      "The Lake Albert oilfields and the nation's energy future.",
+      "A thriving dairy and agriculture economy.",
+      "Emyooga and SACCO enterprise support for traders.",
+      "Gateway to the western tourism circuit — and host to Nakivale."
+    ],
+    "signals": [
+      "oil",
+      "agriculture",
+      "enterprise",
+      "refuge"
+    ],
+    "cities": [
+      "mbarara",
+      "hoima",
+      "fortportal",
+      "kabale",
+      "kasese",
+      "nakivale"
+    ],
+    "order": 4
+  }
+]

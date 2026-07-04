@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+
+const sources = (await getCollection('sources')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<PageLayout
+  title="Sources & Methodology · Forty Years of Transformation"
+  description="The provenance ledger of the official forty-year record of the Republic of Uganda: every figure, its statistical basis, and the rights status of every image."
+  path="/sources"
+  eyebrow="The Provenance Ledger"
+  heading="Sources & methodology"
+  standfirst="A record is only as strong as its evidence. Every figure on the record traces to a public statistical series; every image is accounted for. Where a figure is fixed by editorial decision, that decision is stated."
+>
+  <div class="container-wide pb-28 md:pb-40">
+    <h2 class="eyebrow border-b border-line pb-4 text-mist">Methodology</h2>
+    <div class="grid-12 !px-0 mt-8 gap-y-6">
+      <p class="body-copy col-span-12 max-w-[62ch] text-mist-bright md:col-span-7">
+        The record uses <strong class="font-bold text-cream">five approved figures</strong> as its spine — GDP per capita
+        $330 → $986 · electricity 60 → 2,048 MW · poverty 56% → 16% · 1.8M refugees hosted ·
+        40 years of stability. These were fixed for the anniversary edition after reconciliation
+        between national statistics (UBOS, ERA, OPM) and international series (World Bank,
+        UNHCR), and they do not change between sections. Supporting facts in individual
+        chapters are contextual and cited below. Baselines refer to 1986 unless a series
+        begins later (poverty: 1992/93 survey round, the earliest comparable national line).
+      </p>
+      <p class="body-copy col-span-12 max-w-[46ch] text-mist md:col-span-4 md:col-start-9">
+        Corrections: the record is a living archive through the anniversary year. Verified
+        corrections are entered with a dated note in this ledger.
+      </p>
+    </div>
+
+    <h2 class="eyebrow mt-20 border-b border-line pb-4 text-mist">The ledger</h2>
+    <dl>
+      {
+        sources.map((s) => (
+          <div id={s.data.id} class="grid grid-cols-12 gap-x-6 gap-y-4 border-b border-line py-10 scroll-mt-24">
+            <dt class="col-span-12 md:col-span-4">
+              <span class="heading-2 block text-cream">{s.data.figure}</span>
+            </dt>
+            <dd class="col-span-12 md:col-span-8">
+              <p class="body-copy text-mist-bright">{s.data.statement}</p>
+              <p class="stamp mt-4 text-gold">Provenance</p>
+              <p class="body-copy mt-1 text-[0.95rem] text-mist-bright">{s.data.provenance}</p>
+              <p class="stamp mt-4 text-gold">Basis</p>
+              <p class="body-copy mt-1 text-[0.95rem] text-mist">{s.data.basis}</p>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</PageLayout>

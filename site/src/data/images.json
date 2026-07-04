@@ -1,0 +1,754 @@
+{
+ "photo-archive-05": {
+  "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQBACdASoYABAAPzmGulQvKSWjMAgB4CcJZACdACHenGn7f1O8TGPmriIAAP5RWp7whhLIm6BwojjpG8MMN5N5u6z89geMRDHjmXG4wDyMF4QaHF9T2m/6GPoEDooAAAA=",
+  "alt": "The Victoria Nile gorge below Murchison Falls, forested banks on both sides",
+  "desktop": {
+   "base": "/images/photos/photo-archive-05",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "bg-hero-01": {
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoYAA4APzmGu1OvKSYisAgB4CcJYwC7AGk73rJ0sbbHkAD++l5wV3dztouIZoI4Mz2zR2dwR4jnU0HcmEO27BgfQPT8dlzU2lCKAAAA",
+  "alt": "Portrait of the President dissolving into a glowing gold topographic map of Uganda on deep navy",
+  "desktop": {
+   "base": "/images/bg/bg-hero-01-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-hero-01-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "photo-achv-regional-01": {
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoYABAAPzmQvlWvKqajMAgB4CcJYgCdACHfrPH/dDseAAD+UXatavdMydWg2T7q+aIPCXCqXMjOQKLK7lFfNb4iDshJAAAA",
+  "alt": "Open savanna in Murchison Falls National Park, the Nile shimmering at the horizon",
+  "desktop": {
+   "base": "/images/photos/photo-achv-regional-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "gfx-map-contour-01": {
+  "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAAAwAwCdASoYAA4APzmGulQvKSWjMAgB4CcJZwC/ODBhfXMAAP7uUzZzTuM4kmUutaAAAA==",
+  "alt": "Gold contour-line map texture with glowing settlement nodes on deep navy",
+  "desktop": {
+   "base": "/images/graphics/gfx-map-contour-01-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/graphics/gfx-map-contour-01-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "bg-hero-02": {
+  "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAwCdASoYAA4APzmMvlUvKaajMAgB4CcJZQABHus7rVRaO+HJYAD++Q3vvW9U9jTmO54dzPGHHqIH9SScH+0yAAA=",
+  "alt": "Golden dawn breaking over a dark plain, a winding river catching the first light",
+  "desktop": {
+   "base": "/images/bg/bg-hero-02-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-hero-02-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "bg-hero-03": {
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABwAwCdASoYAA4ALvmczmclLy8vDwD4SgC/OEOu2iZmEhs/PAAA/u5+5B10owsY5oqX/MoR8paJ5tmepULwdg7kC+ONAAAA",
+  "alt": "Aerial view at dawn: sun rising behind the Kampala skyline, a river winding through the city",
+  "desktop": {
+   "base": "/images/bg/bg-hero-03-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": null
+ },
+ "bg-quiet-dark-01": {
+  "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAgCdASoYAA4APzmGuVOvKSWisAgB4CcJaQDE2C0kAAD+7v0Djy1jIAA=",
+  "alt": "",
+  "desktop": {
+   "base": "/images/bg/bg-quiet-dark-01-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": null
+ },
+ "bg-quiet-dark-03": {
+  "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAgCdASoYAA4APzmGulOvKKWisAgB4CcJZwC+SDBsAAD+7ydkZMVAAAA=",
+  "alt": "",
+  "desktop": {
+   "base": "/images/bg/bg-quiet-dark-03-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-quiet-dark-03-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "bg-quiet-dark-02": {
+  "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoYAA4APzmGulQvKSWjMAgB4CcJZwDImC0kAAD+7nyMUc2ZIWbzpYAA",
+  "alt": "",
+  "desktop": {
+   "base": "/images/bg/bg-quiet-dark-02-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-quiet-dark-02-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "bg-active-dark-01": {
+  "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoYAA4APzmGulQvKSWjMAgB4CcJZwDA3DBsAAD+7qQ+TWaTbXUEanstdM/MAA==",
+  "alt": "Night relief map: gold-lit ridgelines, rivers and settlement lights around a dark lake",
+  "desktop": {
+   "base": "/images/bg/bg-active-dark-01-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-active-dark-01-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "bg-active-dark-02": {
+  "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoYAA4APzmYvlYvLCajsAgB4CcJZwDImDBhivCAAP7uHCngtKSN6B1rRSlhmVkFCp8AAA==",
+  "alt": "Night infrastructure: a cable-stayed bridge, highway light trails, pylons and cranes in gold",
+  "desktop": {
+   "base": "/images/bg/bg-active-dark-02-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-active-dark-02-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "photo-archive-04": {
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoYABIAPzmSulgvKiUjqAqp4CcJQBhuAVNykAeXpzZbqT78H3b8AP6TcZzIxcWEoJvF7gFXkJTReIx+L4t1E44WR8a2nzyLvHVmUcig+IQp2cW9+VCdADx9yVMu348qmkZM0ntjoUhr5ZGMz+XuKaZBDnpwwAIx0qWAAA==",
+  "alt": "A volcanic crater lake in Queen Elizabeth National Park reflecting the sky",
+  "desktop": {
+   "base": "/images/photos/photo-archive-04",
+   "widths": [
+    480,
+    960
+   ],
+   "width": 960,
+   "height": 720
+  },
+  "mobile": null
+ },
+ "bg-active-dark-03": {
+  "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAwCdASoYAA4APzmGu1OvKSYisAgB4CcJZwDE2CHftj34S+KKgAAA/ui8d73FdESTNo2dMd2YFwG/IIAAAA==",
+  "alt": "Transmission pylons on a dark horizon, a network of gold light arcing between hills",
+  "desktop": {
+   "base": "/images/bg/bg-active-dark-03-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": null
+ },
+ "bg-active-dark-04": {
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAwCdASoYAA4APzmMvlUvKaajMAgB4CcJQBfnDSv4g3Ghx99ZgQAA/vhKODc7gpK0VEQKJNWOrg6SLHSEng3wxGkgAAAA",
+  "alt": "Golden light-trails converging toward a bright point on a dark horizon",
+  "desktop": {
+   "base": "/images/bg/bg-active-dark-04-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-active-dark-04-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "bg-archive-deep-01": {
+  "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAwCdASoYAA4APzmIulOvKSWisAgB4CcJZQC7ACHfv+Pq11psAAD+6LhpGn5mjf64n/tEHIHKcdZgAAA=",
+  "alt": "Translucent archival plates standing in mist under a low golden light",
+  "desktop": {
+   "base": "/images/bg/bg-archive-deep-01-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": null
+ },
+ "bg-ledger-paper-01": {
+  "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAgCdASoYAA4APzmGuVOvKSWisAgB4CcJZQCw7C0kAAD+7W/AvnqgAAA=",
+  "alt": "",
+  "desktop": {
+   "base": "/images/bg/bg-ledger-paper-01-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": {
+   "base": "/images/bg/bg-ledger-paper-01-mobile",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  }
+ },
+ "bg-close-ceremonial-01": {
+  "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoYAA4APzmGuVOvKSWisAgB4CcJZQCsADBsAAD+7a9aAzalSigAAA==",
+  "alt": "",
+  "desktop": {
+   "base": "/images/bg/bg-close-ceremonial-01-desktop",
+   "widths": [
+    480,
+    960,
+    1440,
+    1672
+   ],
+   "width": 1672,
+   "height": 941
+  },
+  "mobile": null
+ },
+ "photo-voice-01": {
+  "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACQBACdASoYACsAPzmYv1svKqYlpWmZ4CcJZQDNwAt2okuYAScQPoTHpQPjaAAA/ui2ucDeKA3MGQXeVbRNonqY4Cpv2nhbioGxqLeIwAAAAA==",
+  "alt": "Engraved gold-line portrait of a Ugandan elder, shoulders dissolving into map contours",
+  "desktop": {
+   "base": "/images/photos/photo-voice-01",
+   "widths": [
+    540,
+    941
+   ],
+   "width": 941,
+   "height": 1672
+  },
+  "mobile": null
+ },
+ "photo-journey-2000s-01": {
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoYABAAPzmGuVOvKSWisAgB4CcJTI8q0gJwoc96aTQQAP7jPwXKMzbLIWdWd/44QyJyvepmvyABgccSD6itIKchwd/RxZ4zwAA=",
+  "alt": "Terraced green hillsides in the Kigezi highlands, dotted with homesteads",
+  "desktop": {
+   "base": "/images/photos/photo-journey-2000s-01",
+   "widths": [
+    480,
+    960
+   ],
+   "width": 960,
+   "height": 637
+  },
+  "mobile": null
+ },
+ "photo-journey-1990s-01": {
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACQBACdASoYABIAPzmQuFWvKiUjMBgIAeAnCWcAuwAQ8RAYE9GQ2jvqN+Jh6TAA/ljS4fdGx0/jb4CvGMR3ZAja6YJbnw3OllJnXIvYlVyg26lqAAA=",
+  "alt": "The Rwenzori foothills rising above a cultivated valley under an overcast sky",
+  "desktop": {
+   "base": "/images/photos/photo-journey-1990s-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1440
+  },
+  "mobile": null
+ },
+ "photo-journey-1986-01": {
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoYABAAPzmEuVOvKKWisAgB4CcJbACdLoAAKUaRO7wa6ubgAP5xXZWmDeLAAuRmD/QO5mZhqtwL6J7U0JomTt+RvqEPS4oBbn68AAAA",
+  "alt": "Sunrise over Queen Elizabeth National Park: an orange sun in haze above silhouetted savanna",
+  "desktop": {
+   "base": "/images/photos/photo-journey-1986-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1278
+  },
+  "mobile": null
+ },
+ "photo-achv-energy-01": {
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAAPzmEuVOvKKWisAgB4CcJQBdgBDsB7yUvdybwGvKAAP7ekNA9lL/7pgUgZD0SZHGdciB+iHbccpw3ZPgDUnFaSJx4Pa4c/8rgnB1zW/gXbYcUMSBTTJ//JMFjtaVpko0pBk3F31AA",
+  "alt": "The Nile in whitewater over rock at the top of Murchison Falls in golden light",
+  "desktop": {
+   "base": "/images/photos/photo-achv-energy-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "photo-journey-2020s-01": {
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoYABIAPzmMv1evKSajqAqp4CcJZQAALat3l5Wx+zVjC+q6AAD3mWTFffrS1GysCB9tkWT6Dt/wnZArfIzkzu1kJzw4zDVuAAA=",
+  "alt": "Lake Victoria at Jinja, cranes and lakeside works along the industrial shoreline",
+  "desktop": {
+   "base": "/images/photos/photo-journey-2020s-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1440
+  },
+  "mobile": null
+ },
+ "photo-achv-social-01": {
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoYABAAPzmEuVOvKKWisAgB4CcJYwDE2BuUYbHuQr3pBQAA/NleLxkvJtvKjHiOQoVsBxPJTTitAeAE0mjjH/cQZON+sFLkAAA=",
+  "alt": "Homesteads and patchwork farm plots across the terraced hills of south-western Uganda",
+  "desktop": {
+   "base": "/images/photos/photo-achv-social-01",
+   "widths": [
+    480,
+    960
+   ],
+   "width": 960,
+   "height": 637
+  },
+  "mobile": null
+ },
+ "photo-archive-01": {
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBQCdASoYAB8ALvmczmclLy8vDwD4SygGMgIeFKL0wf0vvHQMB68vrlManjOyvTmwAAD+jDtQ36x0wNC6wgwzJTBO8i2R71op74gL3+5uZ2ZRPCR3X3ODsLd3kyJ+DdIe40ChaAPDCgMMcLu5j/NMQJYZC5LQ+gcj2h5HruEAAA==",
+  "alt": "Lake Bunyonyi: still water reflecting forested points, terraced hills in mist",
+  "desktop": {
+   "base": "/images/photos/photo-archive-01",
+   "widths": [
+    480,
+    802
+   ],
+   "width": 802,
+   "height": 1024
+  },
+  "mobile": null
+ },
+ "photo-journey-beyond-01": {
+  "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoYABAAPzmGu1OvKSYisAgB4CcJQBOgAsIUXErWxmKt0tQA+mbg00K/7WAl2MmVW+c6gpwpPdIDfpsxM97w6Nixdhsn3QBLJMEeqWVwOjb1BsLrg6DYAAAA",
+  "alt": "Sunrise over the layered forest ridges of Bwindi, mist pooling in the valleys",
+  "desktop": {
+   "base": "/images/photos/photo-journey-beyond-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "photo-archive-03": {
+  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwBACdASoYABIAPzmOvlevKaYjqAqp4CcJYwDH5BEa5bX9tBRDtsfa1jv7kOQ7oOAA/tSPLq8ZApO317G2X9W1hXfW9Xldl3GAy2+bUJwdwehAu8OBG8dNmfXN7KJ+8fse42HNOD14wMYBYx5TZgnC/AdigAAA",
+  "alt": "High moorland and caldera valleys on Mount Elgon under a clear sky",
+  "desktop": {
+   "base": "/images/photos/photo-archive-03",
+   "widths": [
+    480,
+    960,
+    1200
+   ],
+   "width": 1200,
+   "height": 900
+  },
+  "mobile": null
+ },
+ "photo-archive-02": {
+  "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoYABAAPzmGuVOvKSWisAgB4CcJZgAAVS1JdLYNd8y1GAD+vZW7/6l7uTyOcLbAmT891Cd4HVP8BarSqaqfVIfoe/vcSJT/l7Vo/T8vHvkJUKHTRDjuYft2dttlkGzbXhW7r2tEePqBB3Pkeev0Hq4eAAA=",
+  "alt": "Sipi Falls plunging over a cliff amphitheatre in the eastern highlands",
+  "desktop": {
+   "base": "/images/photos/photo-archive-02",
+   "widths": [
+    480,
+    960,
+    1200
+   ],
+   "width": 1200,
+   "height": 801
+  },
+  "mobile": null
+ },
+ "photo-achv-economy-01": {
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoYABAAPzmGuVOvKSWisAgB4CcJTI8q0gJwoc96aTQQAP7jPwXKMzbLIWdWd/44QyJyvepmvyABgccSD6itIKchwd/RxZ4zwAA=",
+  "alt": "Terraced green hillsides in the Kigezi highlands, dotted with homesteads",
+  "desktop": {
+   "base": "/images/photos/photo-journey-2000s-01",
+   "widths": [
+    480,
+    960
+   ],
+   "width": 960,
+   "height": 637
+  },
+  "mobile": null
+ },
+ "photo-achv-stability-01": {
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoYABAAPzmEuVOvKKWisAgB4CcJbACdLoAAKUaRO7wa6ubgAP5xXZWmDeLAAuRmD/QO5mZhqtwL6J7U0JomTt+RvqEPS4oBbn68AAAA",
+  "alt": "Sunrise over Queen Elizabeth National Park: an orange sun in haze above silhouetted savanna",
+  "desktop": {
+   "base": "/images/photos/photo-journey-1986-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1278
+  },
+  "mobile": null
+ },
+ "photo-journey-2010s-01": {
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAAPzmEuVOvKKWisAgB4CcJQBdgBDsB7yUvdybwGvKAAP7ekNA9lL/7pgUgZD0SZHGdciB+iHbccpw3ZPgDUnFaSJx4Pa4c/8rgnB1zW/gXbYcUMSBTTJ//JMFjtaVpko0pBk3F31AA",
+  "alt": "The Nile in whitewater over rock at the top of Murchison Falls in golden light",
+  "desktop": {
+   "base": "/images/photos/photo-achv-energy-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "frame-01": {
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoYABAAPzmEuVOvKKWisAgB4CcJbACdLoAAKUaRO7wa6ubgAP5xXZWmDeLAAuRmD/QO5mZhqtwL6J7U0JomTt+RvqEPS4oBbn68AAAA",
+  "alt": "Sunrise over Queen Elizabeth National Park: an orange sun in haze above silhouetted savanna",
+  "desktop": {
+   "base": "/images/photos/photo-journey-1986-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1278
+  },
+  "mobile": null
+ },
+ "frame-02": {
+  "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQBACdASoYABAAPzmGulQvKSWjMAgB4CcJZACdACHenGn7f1O8TGPmriIAAP5RWp7whhLIm6BwojjpG8MMN5N5u6z89geMRDHjmXG4wDyMF4QaHF9T2m/6GPoEDooAAAA=",
+  "alt": "The Victoria Nile gorge below Murchison Falls, forested banks on both sides",
+  "desktop": {
+   "base": "/images/photos/photo-archive-05",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "frame-03": {
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACQBACdASoYABIAPzmQuFWvKiUjMBgIAeAnCWcAuwAQ8RAYE9GQ2jvqN+Jh6TAA/ljS4fdGx0/jb4CvGMR3ZAja6YJbnw3OllJnXIvYlVyg26lqAAA=",
+  "alt": "The Rwenzori foothills rising above a cultivated valley under an overcast sky",
+  "desktop": {
+   "base": "/images/photos/photo-journey-1990s-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1440
+  },
+  "mobile": null
+ },
+ "frame-04": {
+  "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoYABAAPzmGuVOvKSWisAgB4CcJZgAAVS1JdLYNd8y1GAD+vZW7/6l7uTyOcLbAmT891Cd4HVP8BarSqaqfVIfoe/vcSJT/l7Vo/T8vHvkJUKHTRDjuYft2dttlkGzbXhW7r2tEePqBB3Pkeev0Hq4eAAA=",
+  "alt": "Sipi Falls plunging over a cliff amphitheatre in the eastern highlands",
+  "desktop": {
+   "base": "/images/photos/photo-archive-02",
+   "widths": [
+    480,
+    960,
+    1200
+   ],
+   "width": 1200,
+   "height": 801
+  },
+  "mobile": null
+ },
+ "frame-05": {
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoYABAAPzmGuVOvKSWisAgB4CcJTI8q0gJwoc96aTQQAP7jPwXKMzbLIWdWd/44QyJyvepmvyABgccSD6itIKchwd/RxZ4zwAA=",
+  "alt": "Terraced green hillsides in the Kigezi highlands, dotted with homesteads",
+  "desktop": {
+   "base": "/images/photos/photo-journey-2000s-01",
+   "widths": [
+    480,
+    960
+   ],
+   "width": 960,
+   "height": 637
+  },
+  "mobile": null
+ },
+ "frame-06": {
+  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwBACdASoYABIAPzmOvlevKaYjqAqp4CcJYwDH5BEa5bX9tBRDtsfa1jv7kOQ7oOAA/tSPLq8ZApO317G2X9W1hXfW9Xldl3GAy2+bUJwdwehAu8OBG8dNmfXN7KJ+8fse42HNOD14wMYBYx5TZgnC/AdigAAA",
+  "alt": "High moorland and caldera valleys on Mount Elgon under a clear sky",
+  "desktop": {
+   "base": "/images/photos/photo-archive-03",
+   "widths": [
+    480,
+    960,
+    1200
+   ],
+   "width": 1200,
+   "height": 900
+  },
+  "mobile": null
+ },
+ "frame-07": {
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAAPzmEuVOvKKWisAgB4CcJQBdgBDsB7yUvdybwGvKAAP7ekNA9lL/7pgUgZD0SZHGdciB+iHbccpw3ZPgDUnFaSJx4Pa4c/8rgnB1zW/gXbYcUMSBTTJ//JMFjtaVpko0pBk3F31AA",
+  "alt": "The Nile in whitewater over rock at the top of Murchison Falls in golden light",
+  "desktop": {
+   "base": "/images/photos/photo-achv-energy-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "frame-08": {
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoYABIAPzmSulgvKiUjqAqp4CcJQBhuAVNykAeXpzZbqT78H3b8AP6TcZzIxcWEoJvF7gFXkJTReIx+L4t1E44WR8a2nzyLvHVmUcig+IQp2cW9+VCdADx9yVMu348qmkZM0ntjoUhr5ZGMz+XuKaZBDnpwwAIx0qWAAA==",
+  "alt": "A volcanic crater lake in Queen Elizabeth National Park reflecting the sky",
+  "desktop": {
+   "base": "/images/photos/photo-archive-04",
+   "widths": [
+    480,
+    960
+   ],
+   "width": 960,
+   "height": 720
+  },
+  "mobile": null
+ },
+ "frame-09": {
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoYABAAPzmQvlWvKqajMAgB4CcJYgCdACHfrPH/dDseAAD+UXatavdMydWg2T7q+aIPCXCqXMjOQKLK7lFfNb4iDshJAAAA",
+  "alt": "Open savanna in Murchison Falls National Park, the Nile shimmering at the horizon",
+  "desktop": {
+   "base": "/images/photos/photo-achv-regional-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ },
+ "frame-10": {
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBQCdASoYAB8ALvmczmclLy8vDwD4SygGMgIeFKL0wf0vvHQMB68vrlManjOyvTmwAAD+jDtQ36x0wNC6wgwzJTBO8i2R71op74gL3+5uZ2ZRPCR3X3ODsLd3kyJ+DdIe40ChaAPDCgMMcLu5j/NMQJYZC5LQ+gcj2h5HruEAAA==",
+  "alt": "Lake Bunyonyi: still water reflecting forested points, terraced hills in mist",
+  "desktop": {
+   "base": "/images/photos/photo-archive-01",
+   "widths": [
+    480,
+    802
+   ],
+   "width": 802,
+   "height": 1024
+  },
+  "mobile": null
+ },
+ "frame-11": {
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoYABAAPzmEuVOvKKWisAgB4CcJYwDE2BuUYbHuQr3pBQAA/NleLxkvJtvKjHiOQoVsBxPJTTitAeAE0mjjH/cQZON+sFLkAAA=",
+  "alt": "Homesteads and patchwork farm plots across the terraced hills of south-western Uganda",
+  "desktop": {
+   "base": "/images/photos/photo-achv-social-01",
+   "widths": [
+    480,
+    960
+   ],
+   "width": 960,
+   "height": 637
+  },
+  "mobile": null
+ },
+ "frame-12": {
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoYABIAPzmMv1evKSajqAqp4CcJZQAALat3l5Wx+zVjC+q6AAD3mWTFffrS1GysCB9tkWT6Dt/wnZArfIzkzu1kJzw4zDVuAAA=",
+  "alt": "Lake Victoria at Jinja, cranes and lakeside works along the industrial shoreline",
+  "desktop": {
+   "base": "/images/photos/photo-journey-2020s-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1440
+  },
+  "mobile": null
+ },
+ "frame-13": {
+  "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoYABAAPzmGu1OvKSYisAgB4CcJQBOgAsIUXErWxmKt0tQA+mbg00K/7WAl2MmVW+c6gpwpPdIDfpsxM97w6Nixdhsn3QBLJMEeqWVwOjb1BsLrg6DYAAAA",
+  "alt": "Sunrise over the layered forest ridges of Bwindi, mist pooling in the valleys",
+  "desktop": {
+   "base": "/images/photos/photo-journey-beyond-01",
+   "widths": [
+    480,
+    960,
+    1440,
+    1920
+   ],
+   "width": 1920,
+   "height": 1280
+  },
+  "mobile": null
+ }
+}

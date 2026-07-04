@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Chapter from './Chapter.astro';
+import Pic from './Pic.astro';
+
+const items = (await getCollection('next')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Chapter id="next" num="09" title="What’s Next" class="grain">
+  <div class="absolute inset-x-0 top-0 h-[70vh]" aria-hidden="true">
+    <Pic id="bg-hero-02" sizes="100vw" alt="" class="h-full w-full object-cover opacity-80" />
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,20,0.55),rgba(11,14,20,0.15)_45%,#0B0E14_96%)]"></div>
+  </div>
+
+  <div class="container-wide relative z-10 pb-32 md:pb-44">
+    <div class="flex min-h-[46vh] flex-col justify-center" data-reveal>
+      <h2 class="display-l max-w-[16ch] text-cream" id="next-title">The next chapter is capacity.</h2>
+      <p class="body-copy mt-6 max-w-[52ch] text-mist-bright">
+        The foundation is laid. The decade ahead turns four decades of groundwork into shared
+        prosperity — hopeful, and stated calmly, the way this record states everything.
+      </p>
+    </div>
+
+    <ol class="mt-10 grid grid-cols-1 gap-x-16 md:mt-16 md:grid-cols-2" data-reveal-stagger>
+      {
+        items.map((n, i) => (
+          <li class="border-t border-line py-8 md:py-10">
+            <div class="flex items-baseline gap-5">
+              <span class="stamp text-gold tnum">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3 class="heading-2 text-cream">{n.data.title}</h3>
+                <p class="body-copy mt-3 max-w-[46ch] text-mist-bright">{n.data.copy}</p>
+                <p class="stamp mt-4 text-gold-hi tnum">{n.data.stat}</p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <figure class="mt-20 border-l-2 border-gold pl-8 md:mt-28 md:pl-12" data-reveal>
+      <blockquote class="heading-1 max-w-[26ch] text-cream">
+        “A transformed Ugandan society — from a peasant to a modern and prosperous country.”
+      </blockquote>
+      <figcaption class="stamp mt-6 text-mist">The Vision 2040 aspiration</figcaption>
+    </figure>
+  </div>
+</Chapter>
