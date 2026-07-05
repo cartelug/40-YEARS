@@ -13,6 +13,7 @@ const MIME = {
 const server = createServer(async (req, res) => {
   try {
     let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    if (p === '/40-YEARS' || p.startsWith('/40-YEARS/')) p = p.slice('/40-YEARS'.length) || '/'; // serve base-prefixed URLs locally
     let f = path.join(DIST, p);
     if (existsSync(f) && !path.extname(f)) f = path.join(f, 'index.html');
     if (!existsSync(f)) f = path.join(DIST, p + '.html');

@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import BaseLayout from './BaseLayout.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
@@ -16,15 +17,15 @@ const { title, description, path, eyebrow, heading, standfirst } = Astro.props;
 <BaseLayout title={title} description={description} path={path}>
   <header class="border-b border-line">
     <div class="container-wide flex items-center justify-between py-6">
-      <a href="/" class="group flex items-center gap-4" aria-label="Back to the record">
-        <img src="/favicon.svg" alt="" width="34" height="34" class="h-[34px] w-[34px]" />
+      <a href={`${base}/`} class="group flex items-center gap-4" aria-label="Back to the record">
+        <img src={`${base}/favicon.svg`} alt="" width="34" height="34" class="h-[34px] w-[34px]" />
         <span class="leading-tight">
           <span class="eyebrow block text-cream">Republic of Uganda</span>
           <span class="stamp block text-mist group-hover:text-gold-hi transition-colors duration-[240ms]">Forty Years of Transformation</span>
         </span>
       </a>
       <nav aria-label="Record pages" class="flex items-center gap-8">
-        <a href="/" class="stamp text-mist-bright transition-colors duration-[240ms] hover:text-gold-hi">← The Record</a>
+        <a href={`${base}/`} class="stamp text-mist-bright transition-colors duration-[240ms] hover:text-gold-hi">← The Record</a>
       </nav>
     </div>
   </header>

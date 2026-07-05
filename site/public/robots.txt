@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /print-record
+Disallow: /40-YEARS/print-record
 
-Sitemap: https://fortyyears.go.ug/sitemap.xml
+Sitemap: https://cartelug.github.io/40-YEARS/sitemap.xml

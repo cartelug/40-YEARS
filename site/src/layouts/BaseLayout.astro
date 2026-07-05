@@ -20,17 +20,19 @@ const {
   bodyClass = '',
 } = Astro.props;
 
-const site = Astro.site ?? new URL('https://fortyyears.go.ug');
-const canonical = new URL(path, site).href;
-const ogImageAbs = new URL(ogImage, site).href;
+const site = Astro.site ?? new URL('https://cartelug.github.io');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const homeUrl = new URL(`${base}/`, site).href;
+const canonical = new URL(`${base}${path}`.replace(/\/$/, '') || `${base}/`, site).href;
+const ogImageAbs = new URL(`${base}${ogImage}`, site).href;
 
 const baseJsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'GovernmentOrganization',
     name: 'Republic of Uganda — State House',
-    url: site.href,
-    logo: new URL('/images/graphics/seal-40.svg', site).href,
+    url: homeUrl,
+    logo: new URL(`${base}/favicon.svg`, site).href,
     sameAs: ['https://www.statehouse.go.ug'],
   },
   {
@@ -41,7 +43,7 @@ const baseJsonLd = [
     inLanguage: 'en',
     datePublished: '2026',
     publisher: { '@type': 'GovernmentOrganization', name: 'Republic of Uganda — State House' },
-    url: site.href,
+    url: homeUrl,
   },
   ...jsonLd,
 ];
@@ -63,9 +65,9 @@ const baseJsonLd = [
     <meta name="theme-color" content="#0B0E14" />
     <meta name="color-scheme" content="dark" />
 
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
+    <link rel="sitemap" href={`${base}/sitemap.xml`} />
 
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
@@ -83,9 +85,9 @@ const baseJsonLd = [
     <meta name="twitter:image" content={ogImageAbs} />
 
     <!-- Self-hosted type: TeX Gyre Heros (GUST Font Licence) -->
-    <link rel="preload" href="/fonts/heros-regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/heros-bold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/heros-cn-bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={`${base}/fonts/heros-regular.woff2`} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={`${base}/fonts/heros-bold.woff2`} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={`${base}/fonts/heros-cn-bold.woff2`} as="font" type="font/woff2" crossorigin />
 
     <script is:inline>
       document.documentElement.classList.add('js');
@@ -104,14 +106,14 @@ const baseJsonLd = [
 
     <!-- Privacy-first, first-party page beacon. No cookies, no identifiers,
          fires only after explicit consent (see ConsentNotice island). -->
-    <script is:inline>
+    <script is:inline define:vars={{ collectPath: `${base}/collect` }}>
       window.__recordConsent = {
         granted: localStorage.getItem('fy-consent') === 'granted',
         beacon() {
           if (!this.granted || !navigator.sendBeacon) return;
           try {
             navigator.sendBeacon(
-              '/collect',
+              collectPath,
               JSON.stringify({ p: location.pathname, r: document.referrer ? 1 : 0, w: innerWidth }),
             );
           } catch {}

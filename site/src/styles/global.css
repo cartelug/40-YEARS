@@ -59,35 +59,35 @@
    platform provides it (declared later in the stack for metrics parity). */
 @font-face {
   font-family: 'Heros';
-  src: url('/fonts/heros-regular.woff2') format('woff2');
+  src: url('../fonts/heros-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Heros';
-  src: url('/fonts/heros-bold.woff2') format('woff2');
+  src: url('../fonts/heros-bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Heros';
-  src: url('/fonts/heros-italic.woff2') format('woff2');
+  src: url('../fonts/heros-italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Heros Cn';
-  src: url('/fonts/heros-cn-bold.woff2') format('woff2');
+  src: url('../fonts/heros-cn-bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Heros Cn';
-  src: url('/fonts/heros-cn-regular.woff2') format('woff2');
+  src: url('../fonts/heros-cn-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

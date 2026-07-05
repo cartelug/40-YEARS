@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const YEAR = 2026;
 ---
 
@@ -6,7 +7,7 @@ const YEAR = 2026;
   <div class="container-wide grid grid-cols-12 gap-x-6 gap-y-12 py-16 md:py-20">
     <div class="col-span-12 md:col-span-5">
       <div class="flex items-center gap-4">
-        <img src="/favicon.svg" alt="" width="40" height="40" class="h-10 w-10" />
+        <img src={`${base}/favicon.svg`} alt="" width="40" height="40" class="h-10 w-10" />
         <p class="eyebrow text-cream">Forty Years of Transformation</p>
       </div>
       <p class="body-copy mt-6 max-w-[44ch] text-[0.95rem] text-mist">
@@ -19,29 +20,29 @@ const YEAR = 2026;
     <nav class="col-span-6 md:col-span-2 md:col-start-7" aria-label="Explore the chapters">
       <h2 class="stamp text-gold">Explore</h2>
       <ul class="mt-5 space-y-3">
-        <li><a href="/#inheritance" class="stamp text-mist-bright hover:text-gold-hi">The Inheritance</a></li>
-        <li><a href="/#ledger" class="stamp text-mist-bright hover:text-gold-hi">The Numbers</a></li>
-        <li><a href="/#journey" class="stamp text-mist-bright hover:text-gold-hi">The Journey</a></li>
-        <li><a href="/#achievements" class="stamp text-mist-bright hover:text-gold-hi">Achievements</a></li>
-        <li><a href="/#regions" class="stamp text-mist-bright hover:text-gold-hi">The Regions</a></li>
+        <li><a href={`${base}/#inheritance`} class="stamp text-mist-bright hover:text-gold-hi">The Inheritance</a></li>
+        <li><a href={`${base}/#ledger`} class="stamp text-mist-bright hover:text-gold-hi">The Numbers</a></li>
+        <li><a href={`${base}/#journey`} class="stamp text-mist-bright hover:text-gold-hi">The Journey</a></li>
+        <li><a href={`${base}/#achievements`} class="stamp text-mist-bright hover:text-gold-hi">Achievements</a></li>
+        <li><a href={`${base}/#regions`} class="stamp text-mist-bright hover:text-gold-hi">The Regions</a></li>
       </ul>
     </nav>
 
     <nav class="col-span-6 md:col-span-2" aria-label="More of the record">
       <h2 class="stamp text-gold">More</h2>
       <ul class="mt-5 space-y-3">
-        <li><a href="/#voices" class="stamp text-mist-bright hover:text-gold-hi">Voices</a></li>
-        <li><a href="/#pictures" class="stamp text-mist-bright hover:text-gold-hi">In Pictures</a></li>
-        <li><a href="/#next" class="stamp text-mist-bright hover:text-gold-hi">What’s Next</a></li>
-        <li><a href="/downloads" class="stamp text-mist-bright hover:text-gold-hi">Downloads</a></li>
+        <li><a href={`${base}/#voices`} class="stamp text-mist-bright hover:text-gold-hi">Voices</a></li>
+        <li><a href={`${base}/#pictures`} class="stamp text-mist-bright hover:text-gold-hi">In Pictures</a></li>
+        <li><a href={`${base}/#next`} class="stamp text-mist-bright hover:text-gold-hi">What’s Next</a></li>
+        <li><a href={`${base}/downloads`} class="stamp text-mist-bright hover:text-gold-hi">Downloads</a></li>
       </ul>
     </nav>
 
     <nav class="col-span-12 md:col-span-3" aria-label="About this record">
       <h2 class="stamp text-gold">The Record</h2>
       <ul class="mt-5 space-y-3">
-        <li><a href="/sources" class="stamp text-mist-bright hover:text-gold-hi">Sources & methodology</a></li>
-        <li><a href="/accessibility" class="stamp text-mist-bright hover:text-gold-hi">Accessibility & languages</a></li>
+        <li><a href={`${base}/sources`} class="stamp text-mist-bright hover:text-gold-hi">Sources & methodology</a></li>
+        <li><a href={`${base}/accessibility`} class="stamp text-mist-bright hover:text-gold-hi">Accessibility & languages</a></li>
         <li>
           <span class="stamp text-mist" aria-label="Available in English; Luganda and Swahili in preparation">
             <span class="text-gold">EN</span> · LG · SW <span class="text-mist/60">(in preparation)</span>

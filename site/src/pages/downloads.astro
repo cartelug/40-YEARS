@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import PageLayout from '../layouts/PageLayout.astro';
 
 const ITEMS = [
@@ -42,7 +43,7 @@ const ITEMS = [
       {
         ITEMS.map((d) => (
           <li class="border-b border-line first:border-t">
-            <a href={d.href} download class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 py-8 transition-colors duration-[240ms] md:py-10">
+            <a href={`${base}${d.href}`} download class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 py-8 transition-colors duration-[240ms] md:py-10">
               <span class="heading-2 col-span-12 text-cream transition-colors duration-[240ms] group-hover:text-gold-hi md:col-span-4">
                 {d.title}
               </span>
@@ -58,7 +59,7 @@ const ITEMS = [
     </ul>
     <p class="stamp mt-10 max-w-[64ch] text-mist">
       Usage: editorial and commemorative use permitted with attribution. The five approved
-      figures must be quoted with their baselines — see <a href="/sources" class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-hi">sources & methodology</a>.
+      figures must be quoted with their baselines — see <a href={`${base}/sources`} class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-hi">sources & methodology</a>.
     </p>
   </div>
 </PageLayout>

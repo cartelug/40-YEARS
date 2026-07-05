@@ -148,7 +148,7 @@ const voices = (await getCollection('voices')).sort((a, b) => a.data.order - b.d
         Forty years ago, a nation in ruins. Today, a nation on the rise. The work continues —
         but the distance travelled is a story worth telling, and worth honouring.
       </p>
-      <p style="margin-top:14mm"><img src="/favicon.svg" width="64" height="64" alt="" /></p>
+      <p style="margin-top:14mm"><img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} width="64" height="64" alt="" /></p>
       <p class="stamp-p">Signed into the national memory · Kampala · MMXXVI</p>
       <p class="stamp-p gold">State House · Republic of Uganda</p>
       <hr class="rule" />

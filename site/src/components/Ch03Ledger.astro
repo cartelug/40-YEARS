@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import { getCollection } from 'astro:content';
 import Chapter from './Chapter.astro';
 import Pic from './Pic.astro';
@@ -21,7 +22,7 @@ const stats = (await getCollection('stats')).sort((a, b) => a.data.order - b.dat
           audited against public series and entered here as the nation's account of itself.
         </p>
       </div>
-      <p class="stamp text-ink-soft" data-reveal>1986 → 2026 · All figures — <a href="/sources" class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-deep">sources & methodology</a></p>
+      <p class="stamp text-ink-soft" data-reveal>1986 → 2026 · All figures — <a href={`${base}/sources`} class="underline decoration-gold decoration-1 underline-offset-4 hover:text-gold-deep">sources & methodology</a></p>
     </div>
 
     <div class="relative mt-16 md:mt-20">
@@ -43,7 +44,7 @@ const stats = (await getCollection('stats')).sort((a, b) => a.data.order - b.dat
               </dt>
               <dd class="col-span-12 md:col-span-5">
                 <a
-                  href={`/sources#${s.data.source}`}
+                  href={`${base}/sources#${s.data.source}`}
                   class="group inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep"
                   aria-label={`${s.data.label}: ${s.data.from !== null ? `${s.data.fromDisplay} in 1986, ${s.data.toDisplay} today` : s.data.toDisplay}. Read the source.`}
                 >

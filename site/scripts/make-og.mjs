@@ -32,7 +32,8 @@ h1{font-family:HerosCn,Arial,sans-serif;color:#EFE7D6;font-size:104px;line-heigh
 
 const server = createServer(async (req, res) => {
   try {
-    const p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    if (p === '/40-YEARS' || p.startsWith('/40-YEARS/')) p = p.slice('/40-YEARS'.length) || '/'; // base-prefixed
     if (p === '/og') {
       res.writeHead(200, { 'content-type': 'text/html' });
       res.end(html);

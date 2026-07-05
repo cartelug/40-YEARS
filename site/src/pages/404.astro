@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Pic from '../components/Pic.astro';
 ---
@@ -21,7 +22,7 @@ import Pic from '../components/Pic.astro';
         story continues where it began.
       </p>
       <a
-        href="/"
+        href={`${base}/`}
         class="eyebrow mt-10 inline-flex min-h-12 items-center border border-gold px-8 py-4 text-gold transition-colors duration-[240ms] hover:bg-gold hover:text-navy"
       >
         Return to the Record

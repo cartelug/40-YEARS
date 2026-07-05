@@ -29,13 +29,16 @@ const CHAPTERS = [
   { id: 'close', num: '10', title: 'The Record Continues' },
 ];
 
+const site = Astro.site ?? new URL('https://cartelug.github.io');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const abs = (p: string) => new URL(`${base}${p}`, site).href;
 const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'The Record', item: 'https://fortyyears.go.ug/' },
-    { '@type': 'ListItem', position: 2, name: 'Sources & Methodology', item: 'https://fortyyears.go.ug/sources' },
-    { '@type': 'ListItem', position: 3, name: 'Downloads', item: 'https://fortyyears.go.ug/downloads' },
+    { '@type': 'ListItem', position: 1, name: 'The Record', item: abs('/') },
+    { '@type': 'ListItem', position: 2, name: 'Sources & Methodology', item: abs('/sources') },
+    { '@type': 'ListItem', position: 3, name: 'Downloads', item: abs('/downloads') },
   ],
 };
 ---

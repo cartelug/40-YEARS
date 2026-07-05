@@ -42,13 +42,14 @@ const {
 const entry = (manifest as Record<string, Entry>)[id as string];
 if (!entry) throw new Error(`Pic: unknown image id "${id}" — run npm run assets`);
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const srcset = (v: Variant, ext: string) =>
-  v.widths.map((w) => `${v.base}-${w}.${ext} ${w}w`).join(', ');
+  v.widths.map((w) => `${base}${v.base}-${w}.${ext} ${w}w`).join(', ');
 
 const d = entry.desktop;
 const m = entry.mobile;
 const altText = alt ?? entry.alt;
-const fallback = `${d.base}-${d.widths[d.widths.length - 1]}.jpg`;
+const fallback = `${base}${d.base}-${d.widths[d.widths.length - 1]}.jpg`;
 ---
 
 <picture>
