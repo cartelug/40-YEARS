@@ -367,6 +367,20 @@
 .journey-tick.is-passed {
   color: var(--color-gold-hi);
 }
+
+/* Chapter rail over cream surfaces: ink voice, pressed gold active */
+#chapter-nav.on-cream a span {
+  color: rgb(58 52 42 / 0.75);
+}
+#chapter-nav.on-cream a span[aria-hidden='true'] {
+  background: rgb(20 17 11 / 0.3);
+}
+#chapter-nav.on-cream a.is-active span {
+  color: var(--color-gold-deep);
+}
+#chapter-nav.on-cream a.is-active span[aria-hidden='true'] {
+  background: var(--color-gold-deep);
+}
 #filmstrip.is-dragging {
   scroll-snap-type: none;
   cursor: grabbing;

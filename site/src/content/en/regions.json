@@ -9,8 +9,8 @@
     ],
     "stats": [
       {
-        "value": "#1",
-        "label": "industrial hub"
+        "value": "51 km",
+        "label": "Kampala–Entebbe Expressway"
       },
       {
         "value": "1,200+",
@@ -86,11 +86,11 @@
     "stats": [
       {
         "value": "600 MW",
-        "label": "Karuma Dam"
+        "label": "Karuma — the nation's largest plant"
       },
       {
-        "value": "#1",
-        "label": "recovery story"
+        "value": "Bidi Bidi",
+        "label": "among the world's largest settlements"
       }
     ],
     "stories": [
@@ -126,11 +126,11 @@
     "stats": [
       {
         "value": "230k",
-        "label": "barrels/day at peak"
+        "label": "barrels/day at peak, Lake Albert"
       },
       {
-        "value": "#1",
-        "label": "oil region"
+        "value": "Nakivale",
+        "label": "among Africa's oldest settlements"
       }
     ],
     "stories": [

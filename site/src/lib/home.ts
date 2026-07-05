@@ -85,12 +85,15 @@ function initNavSpy(): void {
     ]),
   );
   if (!links.size) return;
+  const nav = document.getElementById('chapter-nav');
   const io = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {
         if (e.isIntersecting) {
           links.forEach((a) => a.classList.remove('is-active'));
           links.get(e.target.id)?.classList.add('is-active');
+          // retheme the rail when it floats over a cream chapter
+          nav?.classList.toggle('on-cream', (e.target as HTMLElement).dataset.variant === 'cream');
         }
       }
     },

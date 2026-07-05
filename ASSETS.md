@@ -70,7 +70,7 @@ Uganda landscape photography.
 | `bg-ledger-paper-01-{desktop,mobile}` | …01_09_48 / …01_09_51 | 03 National Ledger (cream guilloché paper) |
 | `bg-close-ceremonial-01-desktop` | …01_09_55 | 10 The Record Continues (embossed cream seal plate) |
 | `gfx-map-contour-01-{desktop,mobile}` | …01_09_38 / …01_09_45 | 06 Regions backdrop texture (stylised — accurate SVG overlays it) |
-| `photo-voice-01` | …01_10_31 | 07 Voices (engraved elder portrait) |
+| `photo-voice-01` | …01_10_31 | Reserve — withheld from Chapter 07 at design review (synthetic portraiture must not sit beside real testimony); retained in the encoded set for secondary use |
 | `photo-journey-1986-01` | 13_queen_elizabeth_sunrise | 04 Journey · 1986 Foundation (+ `photo-achv-stability-01`, `frame-01`) |
 | `photo-journey-1990s-01` | 03_rwenzori_mountains | 04 Journey · 1990s Stabilisation (+ `frame-03`) |
 | `photo-journey-2000s-01` | 10_uganda_terraced_hills | 04 Journey · 2000s Growth (+ `photo-achv-economy-01`, `frame-05`) |

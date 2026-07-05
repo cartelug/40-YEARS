@@ -117,7 +117,9 @@ export default function RegionsMap({ regions, map }: { regions: Region[]; map: M
             >
               <span
                 class={`stamp whitespace-nowrap px-2 py-1 transition-colors duration-[240ms] ${
-                  r.id === active ? 'bg-gold text-navy' : 'bg-obsidian/80 text-mist-bright group-hover:text-gold-hi'
+                  r.id === active
+                    ? 'bg-gold text-navy'
+                    : 'text-mist underline decoration-transparent underline-offset-4 group-hover:text-gold-hi group-hover:decoration-gold-hi group-focus-visible:text-gold-hi'
                 }`}
               >
                 {r.name}

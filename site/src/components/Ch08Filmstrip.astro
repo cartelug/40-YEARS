@@ -13,26 +13,23 @@ const total = String(frames.length).padStart(3, '0');
   </div>
 
   <div class="relative z-10 pb-28 md:pb-40">
-    <div class="container-wide mt-10 flex flex-wrap items-end justify-between gap-8 md:mt-16" data-reveal>
-      <div>
-        <h2 class="heading-1 max-w-[18ch] text-cream" id="pictures-title">
-          The nation, remembered in light.
-        </h2>
-        <p class="body-copy mt-6 max-w-[50ch] text-mist-bright">
-          A curated archive of the land the record was written on. Drag the strip, scroll it,
-          or use the arrow keys.
-        </p>
-      </div>
-      <p class="stamp text-gold tnum lg:pr-14" aria-live="polite">
-        FRAME <span id="film-counter">001</span> / {total}
+    <!-- Compact opening: the strip itself is visible at first paint -->
+    <div class="container-wide mt-6 flex flex-wrap items-end justify-between gap-x-16 gap-y-4 md:mt-8" data-reveal>
+      <h2 class="heading-1 max-w-[18ch] text-cream" id="pictures-title">
+        The nation, remembered in light.
+      </h2>
+      <p class="body-copy max-w-[38ch] pb-1 text-[0.98rem] text-mist-bright">
+        A curated archive of the land the record was written on. Drag the strip, scroll it, or
+        use the arrow keys.
       </p>
     </div>
 
-    <!-- letterbox top bar -->
-    <div class="mt-12 border-y border-line bg-obsidian py-2 md:mt-16" aria-hidden="true">
-      <p class="stamp container-wide flex justify-between gap-4 text-mist/70">
-        <span class="whitespace-nowrap"><span class="max-sm:hidden">NATIONAL ARCHIVE · </span>SERIES A</span>
-        <span class="tnum whitespace-nowrap">UGANDA · 1986–2026</span>
+    <!-- letterbox top bar carries the ticking frame counter -->
+    <div class="mt-8 border-y border-line bg-obsidian py-2 md:mt-10">
+      <p class="stamp container-wide flex justify-between gap-4 text-mist/70 lg:pr-28">
+        <span class="whitespace-nowrap" aria-hidden="true"><span class="max-sm:hidden">NATIONAL ARCHIVE · </span>SERIES A</span>
+        <span class="tnum whitespace-nowrap text-gold" aria-live="polite">FRAME <span id="film-counter">001</span> / {total}</span>
+        <span class="tnum whitespace-nowrap max-sm:hidden" aria-hidden="true">UGANDA · 1986–2026</span>
       </p>
     </div>
 
@@ -71,9 +68,9 @@ const total = String(frames.length).padStart(3, '0');
 
     <!-- letterbox bottom bar + controls -->
     <div class="border-y border-line bg-obsidian py-2" aria-hidden="true">
-      <p class="stamp container-wide flex justify-between text-mist/70">
-        <span>13 FRAMES · SILVER HALIDE GRADE</span>
-        <span>THE RECORD, EXPOSED FRAME BY FRAME</span>
+      <p class="stamp container-wide flex justify-between gap-4 text-mist/70 lg:pr-28">
+        <span class="whitespace-nowrap">13 FRAMES · SILVER HALIDE GRADE</span>
+        <span class="whitespace-nowrap max-sm:hidden">THE RECORD, EXPOSED FRAME BY FRAME</span>
       </p>
     </div>
 

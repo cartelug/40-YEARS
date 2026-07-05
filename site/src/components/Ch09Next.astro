@@ -10,6 +10,8 @@ const items = (await getCollection('next')).sort((a, b) => a.data.order - b.data
   <div class="absolute inset-x-0 top-0 h-[70vh]" aria-hidden="true">
     <Pic id="bg-hero-02" sizes="100vw" alt="" class="h-full w-full object-cover opacity-80" />
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,20,0.55),rgba(11,14,20,0.15)_45%,#0B0E14_96%)]"></div>
+    <!-- right-edge scrim keeps the chapter rail legible over the bright haze -->
+    <div class="absolute inset-y-0 right-0 hidden w-40 bg-[linear-gradient(270deg,rgba(11,14,20,0.6),rgba(11,14,20,0))] lg:block"></div>
   </div>
 
   <div class="container-wide relative z-10 pb-32 md:pb-44">

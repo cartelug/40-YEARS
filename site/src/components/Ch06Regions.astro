@@ -15,17 +15,19 @@ const regions = regionEntries.map((r) => r.data);
   </div>
 
   <div class="container-wide relative z-10 pb-32 md:pb-44">
-    <div class="mt-10 md:mt-16" data-reveal>
-      <h2 class="heading-1 max-w-[20ch] text-cream" id="regions-title">
-        One country. Many regions.<br />One national record.
+    <!-- Compact opening: geography reaches the first viewport -->
+    <div class="mt-6 flex flex-wrap items-end justify-between gap-x-16 gap-y-4 md:mt-8" data-reveal>
+      <h2 class="heading-1 text-cream" id="regions-title">
+        <span class="md:whitespace-nowrap">One country. Many regions.</span><br />
+        <span class="md:whitespace-nowrap">One national record.</span>
       </h2>
-      <p class="body-copy mt-6 max-w-[52ch] text-mist-bright">
+      <p class="body-copy max-w-[38ch] pb-1 text-[0.98rem] text-mist-bright">
         Transformation that stops at the capital is not transformation. Roads, power, schools,
         hospitals, agriculture and refuge — written across the whole map.
       </p>
     </div>
 
-    <div class="mt-14 md:mt-20" data-reveal>
+    <div class="mt-10 md:mt-12" data-reveal>
       <RegionsMap client:visible regions={regions} map={map} />
     </div>
   </div>

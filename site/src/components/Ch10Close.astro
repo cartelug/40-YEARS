@@ -4,14 +4,20 @@ import Pic from './Pic.astro';
 import Seal from './Seal.astro';
 ---
 
-<Chapter id="close" num="10" title="The Record Continues" variant="cream">
+<Chapter id="close" num="10" title="The Record Continues" variant="cream" noStamp>
   <div class="absolute inset-0 opacity-90" aria-hidden="true">
     <Pic id="bg-close-ceremonial-01" sizes="100vw" alt="" class="h-full w-full object-cover" />
   </div>
 
   <div class="container-wide relative z-10 pb-28 md:pb-36">
-    <div class="mx-auto max-w-4xl pt-6 text-center md:pt-10">
-      <h2 class="display-l text-ink" id="close-title" data-reveal>
+    <div class="mx-auto max-w-4xl pt-24 text-center md:pt-40">
+      <!-- ceremonial close commits to the centre axis, stamp included -->
+      <p class="stamp flex items-baseline justify-center gap-4 text-ink-soft" data-reveal>
+        <span class="text-gold-deep tnum">10</span>
+        <span aria-hidden="true" class="inline-block h-px w-10 translate-y-[-3px] bg-gold-deep"></span>
+        <span>The Record Continues</span>
+      </p>
+      <h2 class="display-l mt-10 text-ink md:mt-14" id="close-title" data-reveal>
         Four decades. One journey.<br />A transformed nation.
       </h2>
 
