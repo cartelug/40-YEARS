@@ -17,6 +17,8 @@ export default defineConfig({
   },
   build: {
     inlineStylesheets: 'auto',
-    assets: 'assets',
+    // '_astro' (default) keeps hashed JS/CSS clear of the raw /assets
+    // sources when the built site is published at the repo root.
+    assets: '_astro',
   },
 });

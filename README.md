@@ -63,6 +63,23 @@ node scripts/shoot.mjs out/     # screenshot every chapter, desktop+mobile
 Order of operations when assets or copy change:
 `npm run assets` → `npm run build` → `node scripts/make-pdf.mjs` → `npm run build`.
 
+### Publishing to the live branch
+
+The live site is served from the **repository root of `main`**. The built
+output (`index.html`, `_astro/`, `images/`, `fonts/`, `sources/`, …) is
+committed there; the raw sources stay in `/assets` and `/site`. To republish
+after any change:
+
+```bash
+cd site
+bash scripts/publish-root.sh   # build + PDF + OG card, then copy dist/ → repo root
+git add -A && git commit && git push origin main
+```
+
+The previous single-file legacy site that lived at the root is preserved in
+git history (pre-2026-07 commits) and its full copy extract in
+`content-notion/legacy-index-copy.md`.
+
 ## Editing content
 
 All copy lives in `site/src/content/en/`:
