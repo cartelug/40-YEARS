@@ -1,0 +1,65 @@
+---
+/**
+ * Preloader — the national mark drawing itself: 40 ticks, one per year,
+ * around the numeral. Shows once per session, never under reduced motion
+ * or without JS; hard ceiling 1.6s so it can never hold the record hostage.
+ */
+const ticks = Array.from({ length: 40 }, (_, i) => {
+  const a = (i / 40) * Math.PI * 2 - Math.PI / 2;
+  const long = i % 10 === 0;
+  const r1 = long ? 58 : 63;
+  const r2 = 72;
+  return {
+    x1: 80 + r1 * Math.cos(a),
+    y1: 80 + r1 * Math.sin(a),
+    x2: 80 + r2 * Math.cos(a),
+    y2: 80 + r2 * Math.sin(a),
+    long,
+    d: 0.12 + (i / 40) * 0.75,
+  };
+});
+---
+
+<div id="preloader" hidden>
+  <svg viewBox="0 0 160 160" class="preloader-mark" aria-hidden="true">
+    {
+      ticks.map((t) => (
+        <line
+          x1={t.x1}
+          y1={t.y1}
+          x2={t.x2}
+          y2={t.y2}
+          stroke="#C9A227"
+          stroke-width={t.long ? 2.2 : 1.1}
+          pathLength="1"
+          class="pl-tick"
+          style={`animation-delay:${t.d}s`}
+        />
+      ))
+    }
+    <text x="80" y="94" text-anchor="middle" font-size="40" font-weight="700" fill="#EFE7D6" class="pl-num tnum">40</text>
+  </svg>
+  <p class="stamp pl-line" style="color:#8A93A3">Forty Years of Transformation</p>
+  <p class="stamp pl-line" style="color:#C9A227;animation-delay:.55s">Republic of Uganda · 1986–2026</p>
+</div>
+
+<script is:inline>
+  (() => {
+    const el = document.getElementById('preloader');
+    if (!el) return;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let seen = false;
+    try { seen = sessionStorage.getItem('fy-seen') === '1'; } catch {}
+    if (reduced || seen) { el.remove(); return; }
+    el.hidden = false;
+    document.documentElement.classList.add('preloading');
+    try { sessionStorage.setItem('fy-seen', '1'); } catch {}
+    const done = () => {
+      el.classList.add('pl-out');
+      document.documentElement.classList.remove('preloading');
+      setTimeout(() => el.remove(), 620);
+    };
+    const t = setTimeout(done, 1600);
+    addEventListener('load', () => { clearTimeout(t); setTimeout(done, 250); }, { once: true });
+  })();
+</script>

@@ -46,7 +46,7 @@ const pillars = (await getCollection('pillars')).sort((a, b) => a.data.order - b
 
             <div class={`col-span-12 md:col-span-6 ${p.data.align === 'right' ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}>
               {p.data.image ? (
-                <figure class="relative h-full min-h-[280px]">
+                <figure class={`relative h-full min-h-[280px] ${p.data.align === 'right' ? 'wipe-r' : 'wipe'}`}>
                   <Pic
                     id={p.data.image}
                     sizes="(max-width: 767px) 92vw, 46vw"

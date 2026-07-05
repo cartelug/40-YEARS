@@ -56,24 +56,44 @@ function initSpine(): void {
 
   if (prefersReducedMotion()) return; // stays fully drawn
 
-  const { gsap, ScrollTrigger } = ensureMotion();
-  gsap.fromTo(
-    progress,
-    { scaleY: 0 },
-    {
-      scaleY: 1,
-      ease: 'none',
-      scrollTrigger: { trigger: spine, start: 'top center', end: 'bottom center', scrub: true },
-    },
-  );
-  chapters.forEach((ch, i) => {
-    ScrollTrigger.create({
-      trigger: ch,
-      start: 'top 55%',
-      end: 'bottom 55%',
-      onToggle: (self) => nodes[i].classList.toggle('is-active', self.isActive),
+  // Live-rect driver (pin-proof): ScrollTrigger positions go stale below
+  // the pinned journey, so the spine reads real geometry every frame.
+  onScrollFrame((vh) => {
+    const r = spine.getBoundingClientRect();
+    const drawn = Math.min(1, Math.max(0, (vh / 2 - r.top) / Math.max(1, r.height)));
+    progress.style.transform = `scaleY(${drawn.toFixed(4)})`;
+    chapters.forEach((ch, i) => {
+      const cr = ch.getBoundingClientRect();
+      nodes[i].classList.toggle('is-active', cr.top < vh * 0.55 && cr.bottom > vh * 0.55);
     });
   });
+  progress.style.transformOrigin = 'top';
+  progress.style.transform = 'scaleY(0)';
+}
+
+/* ————— Shared rAF scroll bus for the live-rect drivers ————— */
+type FrameFn = (vh: number) => void;
+const frameFns: FrameFn[] = [];
+let frameQueued = false;
+function runFrame(): void {
+  frameQueued = false;
+  const vh = window.innerHeight;
+  for (const fn of frameFns) fn(vh);
+}
+function queueFrame(): void {
+  if (!frameQueued) {
+    frameQueued = true;
+    requestAnimationFrame(runFrame);
+  }
+}
+function onScrollFrame(fn: FrameFn): void {
+  if (frameFns.length === 0) {
+    window.addEventListener('scroll', queueFrame, { passive: true });
+    window.addEventListener('resize', queueFrame, { passive: true });
+    window.addEventListener('load', queueFrame);
+  }
+  frameFns.push(fn);
+  queueFrame();
 }
 
 /* ————— Scroll-spy chapter rail ————— */
@@ -291,6 +311,42 @@ function initFilmstrip(): void {
   strip.addEventListener('pointercancel', endDrag);
 }
 
+/* ————— Background theatre: dark chapters dissolve into each other —————
+   Driven by live rects on the shared rAF bus (pin-proof, resize-proof). */
+function initTheatre(): void {
+  if (prefersReducedMotion()) return;
+  const theatre = document.getElementById('bg-theatre');
+  if (!theatre) return;
+  document.documentElement.classList.add('theatre-on');
+
+  const items = Array.from(theatre.querySelectorAll<HTMLElement>('[data-plate]'))
+    .map((plate) => ({ plate, section: document.getElementById(plate.dataset.plate || '') }))
+    .filter((x): x is { plate: HTMLElement; section: HTMLElement } => !!x.section);
+
+  const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
+
+  onScrollFrame((vh) => {
+    // read phase
+    const rects = items.map(({ section }) => section.getBoundingClientRect());
+    // write phase
+    items.forEach(({ plate }, i) => {
+      const r = rects[i];
+      const near = r.top < vh * 1.6 && r.bottom > -vh * 0.6;
+      if (!near) {
+        if (plate.style.display !== 'none') plate.style.display = 'none';
+        return;
+      }
+      if (plate.style.display !== 'block') plate.style.display = 'block';
+      // dissolve in as the chapter arrives, out as the next takes over
+      const fadeIn = clamp01((vh * 0.92 - r.top) / (vh * 0.5));
+      const fadeOut = clamp01((r.bottom - vh * 0.06) / (vh * 0.52));
+      const o = Math.min(fadeIn, fadeOut);
+      plate.style.opacity = o.toFixed(3);
+      plate.style.visibility = o > 0.005 ? 'visible' : 'hidden';
+    });
+  });
+}
+
 /* ————— Seal + hero parallax ————— */
 function initSeal(): void {
   const seal = document.querySelector('[data-seal]');
@@ -328,6 +384,7 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
 document.fonts?.ready.then(() => ScrollTrigger.refresh()).catch(() => {});
 initReveals();
 initSmoothAnchors();
+initTheatre();
 initSpine();
 initNavSpy();
 initCountUp();

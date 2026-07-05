@@ -4,13 +4,40 @@ import Chapter from './Chapter.astro';
 import Pic from './Pic.astro';
 import RegionsMap from '../islands/RegionsMap';
 import map from '../data/uganda-map.json';
+import manifest from '../data/images.json';
 
 const regionEntries = (await getCollection('regions')).sort((a, b) => a.data.order - b.data.order);
 const regions = regionEntries.map((r) => r.data);
+
+// photographic evidence per region (no authentic Central photo exists — see gap report)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const PHOTO_BY_REGION: Record<string, { id: string; caption: string }> = {
+  eastern: { id: 'photo-archive-02', caption: 'Sipi Falls · Kapchorwa' },
+  northern: { id: 'photo-archive-05', caption: 'The Victoria Nile · Murchison' },
+  western: { id: 'photo-archive-01', caption: 'Lake Bunyonyi · Kabale' },
+};
+const regionPhotos = Object.fromEntries(
+  Object.entries(PHOTO_BY_REGION).map(([region, { id, caption }]) => {
+    const m = (manifest as any)[id];
+    const d = m.desktop;
+    return [
+      region,
+      {
+        src: `${base}${d.base}-${d.widths[d.widths.length - 1]}.jpg`,
+        srcset: d.widths.map((w: number) => `${base}${d.base}-${w}.jpg ${w}w`).join(', '),
+        width: d.width,
+        height: d.height,
+        lqip: m.lqip,
+        alt: m.alt,
+        caption,
+      },
+    ];
+  }),
+);
 ---
 
 <Chapter id="regions" num="06" title="The Regions" class="grain">
-  <div class="absolute inset-0 opacity-30" aria-hidden="true">
+  <div class="absolute inset-0 opacity-30" aria-hidden="true" data-local-plate>
     <Pic id="bg-active-dark-01" sizes="100vw" alt="" class="h-full w-full object-cover" />
   </div>
 
@@ -28,7 +55,7 @@ const regions = regionEntries.map((r) => r.data);
     </div>
 
     <div class="mt-10 md:mt-12" data-reveal>
-      <RegionsMap client:visible regions={regions} map={map} />
+      <RegionsMap client:visible regions={regions} map={map} photos={regionPhotos} />
     </div>
   </div>
 </Chapter>

@@ -35,9 +35,13 @@ const stats = (await getCollection('stats')).sort((a, b) => a.data.order - b.dat
         {
           stats.map((s, i) => (
             <div
-              class="grid grid-cols-12 items-end gap-x-6 gap-y-2 border-t border-gold/70 py-8 last-of-type:border-b md:py-10"
+              class="relative grid grid-cols-12 items-end gap-x-6 gap-y-2 py-8 md:py-10"
               data-reveal
             >
+              <span class="rule-anim absolute inset-x-0 top-0 h-px bg-gold/70" aria-hidden="true"></span>
+              {i === stats.length - 1 && (
+                <span class="rule-anim absolute inset-x-0 bottom-0 h-px bg-gold/70" aria-hidden="true"></span>
+              )}
               <dt class="col-span-12 md:col-span-4">
                 <span class="stamp text-ink-soft tnum">{String(i + 1).padStart(2, '0')}</span>
                 <span class="heading-2 mt-2 block text-ink">{s.data.label}</span>

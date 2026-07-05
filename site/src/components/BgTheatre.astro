@@ -1,0 +1,37 @@
+---
+/**
+ * The background theatre — one fixed cinematic layer behind the record.
+ * Dark chapters cross-dissolve into each other, scrubbed to scroll
+ * (driver: initTheatre in home.ts). Cream chapters (03, 10) stay opaque
+ * printed sheets above the film. display:none until JS + motion enable
+ * it, so the static fallback never double-loads imagery.
+ */
+import Pic from './Pic.astro';
+
+const PLATES = [
+  { ch: 'inheritance', img: 'bg-quiet-dark-01', overlay: 'bg-navy/30' },
+  { ch: 'journey', img: 'bg-active-dark-02', overlay: 'bg-navy/75' },
+  { ch: 'achievements', img: 'bg-active-dark-01', overlay: 'bg-navy/78' },
+  { ch: 'regions', img: 'gfx-map-contour-01', overlay: 'bg-navy/70' },
+  { ch: 'voices', img: 'bg-quiet-dark-02', overlay: 'bg-navy/40' },
+  { ch: 'pictures', img: 'bg-archive-deep-01', overlay: 'bg-obsidian/60' },
+  { ch: 'next', img: 'bg-hero-02', overlay: '' },
+];
+---
+
+<div id="bg-theatre" aria-hidden="true">
+  {
+    PLATES.map((p) => (
+      <div class="bg-plate absolute inset-0" data-plate={p.ch} style="opacity:0;visibility:hidden;display:none">
+        <Pic id={p.img} sizes="100vw" alt="" class="h-full w-full object-cover" />
+        {p.overlay && <div class={`absolute inset-0 ${p.overlay}`} />}
+        {p.ch === 'next' && (
+          <>
+            <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,20,0.55),rgba(11,14,20,0.25)_45%,rgba(11,14,20,0.9)_96%)]" />
+            <div class="absolute inset-y-0 right-0 hidden w-40 bg-[linear-gradient(270deg,rgba(11,14,20,0.6),rgba(11,14,20,0))] lg:block" />
+          </>
+        )}
+      </div>
+    ))
+  }
+</div>

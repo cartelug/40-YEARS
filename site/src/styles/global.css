@@ -390,6 +390,140 @@
   cursor: grab;
 }
 
+/* ————— Background theatre (JS + motion only) ————————————————
+   One fixed layer of chapter plates cross-dissolving behind the scroll.
+   Hidden by default so the static per-section fallback never double-loads. */
+#bg-theatre {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-navy);
+}
+.theatre-on #bg-theatre {
+  display: block;
+}
+.theatre-on main,
+.theatre-on footer,
+.theatre-on header {
+  position: relative;
+  z-index: 1;
+}
+.theatre-on section[data-variant='dark'],
+.theatre-on section[data-variant='obsidian'] {
+  background-color: transparent;
+}
+.theatre-on section[data-variant='dark'].seam-dark::before,
+.theatre-on section[data-variant='dark'].seam-dark::after,
+.theatre-on section[data-variant='obsidian'].seam-dark::before,
+.theatre-on section[data-variant='obsidian'].seam-dark::after {
+  content: none;
+}
+.theatre-on [data-local-plate]:not([data-keep]) {
+  display: none;
+}
+/* the hero keeps its plate (LCP) and dissolves into the theatre below */
+.theatre-on #opening [data-local-plate][data-keep] {
+  -webkit-mask-image: linear-gradient(to bottom, black 74%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 74%, transparent 100%);
+}
+
+/* ————— Preloader ————————————————————————————————————————————— */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-obsidian);
+  transition: opacity 0.55s var(--ease-exit);
+}
+#preloader[hidden] {
+  display: none;
+}
+#preloader.pl-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.preloading {
+  overflow: hidden;
+}
+.preloader-mark {
+  width: 148px;
+  height: 148px;
+  margin-bottom: 14px;
+}
+.pl-tick {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: pl-draw 0.5s var(--ease-standard) forwards;
+}
+.pl-num,
+.pl-line {
+  opacity: 0;
+  animation: pl-fade 0.7s var(--ease-entrance) 0.35s forwards;
+}
+@keyframes pl-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pl-fade {
+  to {
+    opacity: 1;
+  }
+}
+/* hold hero entrance until the curtain lifts */
+.preloading .hero-word,
+.preloading [data-hero-fade] {
+  animation-play-state: paused !important;
+}
+
+/* ————— Scroll-reveal upgrades (JS + motion only) ————————————— */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] .rule-anim {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-slow) var(--ease-standard) 120ms;
+  }
+  .js [data-reveal].is-inview .rule-anim {
+    transform: scaleX(1);
+  }
+  .js [data-reveal] .wipe {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s var(--ease-entrance) 150ms;
+  }
+  .js [data-reveal] .wipe-r {
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 1s var(--ease-entrance) 150ms;
+  }
+  .js [data-reveal].is-inview .wipe,
+  .js [data-reveal].is-inview .wipe-r {
+    clip-path: inset(0 0 0 0);
+  }
+  .js [data-reveal].letterbox-open {
+    clip-path: inset(14% 0 14% 0);
+    transition: clip-path var(--duration-cinematic) var(--ease-entrance) 100ms;
+  }
+  .js [data-reveal].letterbox-open.is-inview {
+    clip-path: inset(0 0 0 0);
+  }
+  .js .hero-plate-zoom {
+    animation: hero-settle 2.6s var(--ease-entrance) forwards;
+  }
+  @keyframes hero-settle {
+    from {
+      transform: scale(1.045);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
+
 /* ————— LQIP blur-up ————————————————————————————————————————— */
 @utility lqip {
   background-size: cover;

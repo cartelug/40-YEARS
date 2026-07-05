@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Preloader from '../components/Preloader.astro';
+import BgTheatre from '../components/BgTheatre.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SpineTrack from '../components/SpineTrack.astro';
 import ChapterNav from '../components/ChapterNav.astro';
@@ -49,6 +51,8 @@ const breadcrumb = {
   path="/"
   jsonLd={[breadcrumb]}
 >
+  <Preloader />
+  <BgTheatre />
   <SiteHeader />
   <ChapterNav chapters={CHAPTERS} />
 

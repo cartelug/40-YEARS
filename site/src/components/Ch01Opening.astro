@@ -8,15 +8,17 @@ const H1_WORDS = ['Forty', 'Years', 'of', 'Transformation'];
 ---
 
 <Chapter id="opening" num="01" title="Opening" noStamp class="grain">
-  <div class="absolute inset-0" aria-hidden="true">
-    <Pic
-      id="bg-hero-01"
-      sizes="100vw"
-      loading="eager"
-      fetchpriority="high"
-      alt=""
-      class="h-full w-full object-cover"
-    />
+  <div class="absolute inset-0" aria-hidden="true" data-local-plate data-keep>
+    <div class="hero-plate-zoom absolute inset-0 overflow-hidden">
+      <Pic
+        id="bg-hero-01"
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        alt=""
+        class="h-full w-full object-cover"
+      />
+    </div>
     <!-- legibility scrim: headline zone reads AA over the plate -->
     <div
       class="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,14,20,0.88)_0%,rgba(11,14,20,0.55)_42%,rgba(11,14,20,0.12)_68%,rgba(11,14,20,0)_100%)] max-md:bg-[linear-gradient(180deg,rgba(11,14,20,0.62)_0%,rgba(11,14,20,0.18)_38%,rgba(11,14,20,0.82)_82%)]"

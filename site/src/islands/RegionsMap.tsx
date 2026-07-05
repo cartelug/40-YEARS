@@ -38,7 +38,25 @@ const SIGNAL_LABELS: Record<string, string> = {
   enterprise: 'Enterprise',
 };
 
-export default function RegionsMap({ regions, map }: { regions: Region[]; map: MapData }) {
+type RegionPhoto = {
+  src: string;
+  srcset: string;
+  width: number;
+  height: number;
+  lqip: string;
+  alt: string;
+  caption: string;
+};
+
+export default function RegionsMap({
+  regions,
+  map,
+  photos = {},
+}: {
+  regions: Region[];
+  map: MapData;
+  photos?: Record<string, RegionPhoto>;
+}) {
   const [active, setActive] = useState(regions[0].id);
   const [drawn, setDrawn] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -161,6 +179,24 @@ export default function RegionsMap({ regions, map }: { regions: Region[]; map: M
               </li>
             ))}
           </ul>
+
+          {photos[region.id] && (
+            <figure class="mt-8 border-t border-line pt-6" key={`photo-${region.id}`}>
+              <img
+                src={photos[region.id].src}
+                srcset={photos[region.id].srcset}
+                sizes="(max-width: 1023px) 92vw, 34vw"
+                width={photos[region.id].width}
+                height={photos[region.id].height}
+                alt={photos[region.id].alt}
+                loading="lazy"
+                decoding="async"
+                class="lqip max-h-56 w-full object-cover"
+                style={{ backgroundImage: `url("${photos[region.id].lqip}")` }}
+              />
+              <figcaption class="stamp mt-3 text-mist/80">{photos[region.id].caption}</figcaption>
+            </figure>
+          )}
         </article>
       </div>
     </div>

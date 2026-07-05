@@ -26,6 +26,8 @@ export function ensureMotion(): { gsap: typeof gsap; ScrollTrigger: typeof Scrol
   booted = true;
 
   gsap.registerPlugin(ScrollTrigger);
+  // exposed for the screenshot/QA tooling (scripts/probe-*.mjs)
+  (window as unknown as { __ST?: typeof ScrollTrigger }).__ST = ScrollTrigger;
 
   if (!prefersReducedMotion()) {
     lenis = new Lenis({

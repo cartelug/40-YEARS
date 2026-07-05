@@ -57,19 +57,19 @@ Uganda landscape photography.
 | Final name | Source | Serves |
 |---|---|---|
 | `bg-hero-01-{desktop,mobile}` | …01_09_20 / …01_09_33 | 01 Opening hero (portrait + gold Uganda topography) |
-| `bg-hero-02-{desktop,mobile}` | …01_10_24 / …01_10_20 | 09 What's Next (dawn horizon) |
-| `bg-hero-03-desktop` | …01_11_31 | OG-cover alternate · 404 (Kampala dawn aerial) |
+| `bg-hero-02-{desktop,mobile}` | …01_10_24 / …01_10_20 | 09 What's Next (dawn horizon, theatre plate) |
+| `bg-hero-03-desktop` | …01_11_31 | /downloads backdrop · 404 (Kampala dawn aerial) |
 | `bg-quiet-dark-01-desktop` | …01_09_42 | 02 The Inheritance (near-silent navy plate) |
 | `bg-quiet-dark-02-{desktop,mobile}` | …01_11_35 / …01_11_40 | 07 Voices (glow + filament contours) |
-| `bg-quiet-dark-03-{desktop,mobile}` | …01_10_05 / …01_10_03 | 10 pre-close / spare |
-| `bg-active-dark-01-{desktop,mobile}` | …01_10_13 / …01_10_28 | 06 The Regions (night relief, settlement lights) |
+| `bg-quiet-dark-03-{desktop,mobile}` | …01_10_05 / …01_10_03 | /sources backdrop |
+| `bg-active-dark-01-{desktop,mobile}` | …01_10_13 / …01_10_28 | 05 Achievements theatre plate (night relief as the national atlas); regions static fallback |
 | `bg-active-dark-02-{desktop,mobile}` | …01_10_41 / …01_10_46 | 04 The Journey (bridge, highway, cranes) |
-| `bg-active-dark-03-desktop` | …01_11_21 | 09 What's Next band (pylons network) |
-| `bg-active-dark-04-{desktop,mobile}` | …01_11_47 / …01_11_50 | 09 What's Next horizon (light trails) |
+| `bg-active-dark-03-desktop` | …01_11_21 | 09 What's Next evidence band (pylons network) |
+| `bg-active-dark-04-{desktop,mobile}` | …01_11_47 / …01_11_50 | 09 Vision-2040 quote band (light trails) |
 | `bg-archive-deep-01-desktop` | …01_10_35 | 08 In Pictures (archival monoliths) |
 | `bg-ledger-paper-01-{desktop,mobile}` | …01_09_48 / …01_09_51 | 03 National Ledger (cream guilloché paper) |
 | `bg-close-ceremonial-01-desktop` | …01_09_55 | 10 The Record Continues (embossed cream seal plate) |
-| `gfx-map-contour-01-{desktop,mobile}` | …01_09_38 / …01_09_45 | 06 Regions backdrop texture (stylised — accurate SVG overlays it) |
+| `gfx-map-contour-01-{desktop,mobile}` | …01_09_38 / …01_09_45 | 06 The Regions theatre plate (stylised texture — accurate SVG map overlays it) |
 | `photo-voice-01` | …01_10_31 | Reserve — withheld from Chapter 07 at design review (synthetic portraiture must not sit beside real testimony); retained in the encoded set for secondary use |
 | `photo-journey-1986-01` | 13_queen_elizabeth_sunrise | 04 Journey · 1986 Foundation (+ `photo-achv-stability-01`, `frame-01`) |
 | `photo-journey-1990s-01` | 03_rwenzori_mountains | 04 Journey · 1990s Stabilisation (+ `frame-03`) |

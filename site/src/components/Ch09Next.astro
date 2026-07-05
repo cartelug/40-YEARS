@@ -7,7 +7,7 @@ const items = (await getCollection('next')).sort((a, b) => a.data.order - b.data
 ---
 
 <Chapter id="next" num="09" title="What’s Next" class="grain">
-  <div class="absolute inset-x-0 top-0 h-[70vh]" aria-hidden="true">
+  <div class="absolute inset-x-0 top-0 h-[70vh]" aria-hidden="true" data-local-plate>
     <Pic id="bg-hero-02" sizes="100vw" alt="" class="h-full w-full object-cover opacity-80" />
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,20,0.55),rgba(11,14,20,0.15)_45%,#0B0E14_96%)]"></div>
     <!-- right-edge scrim keeps the chapter rail legible over the bright haze -->
@@ -40,11 +40,34 @@ const items = (await getCollection('next')).sort((a, b) => a.data.order - b.data
       }
     </ol>
 
-    <figure class="mt-20 border-l-2 border-gold pl-8 md:mt-28 md:pl-12" data-reveal>
-      <blockquote class="heading-1 max-w-[26ch] text-cream">
-        “A transformed Ugandan society — from a peasant to a modern and prosperous country.”
-      </blockquote>
-      <figcaption class="stamp mt-6 text-mist">The Vision 2040 aspiration</figcaption>
+    <!-- Evidence band: the grid, extended -->
+    <figure class="relative mt-20 md:mt-28" data-reveal>
+      <div class="wipe relative">
+        <Pic
+          id="bg-active-dark-03"
+          sizes="(max-width: 767px) 92vw, 82vw"
+          class="max-h-[52vh] w-full object-cover"
+          alt="Transmission pylons on a dark horizon, a network of gold light arcing between hills"
+        />
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,20,0.25),rgba(11,14,20,0.05)_50%,rgba(11,14,20,0.55))]" aria-hidden="true"></div>
+      </div>
+      <figcaption class="stamp mt-3 flex justify-between gap-6 text-mist">
+        <span>The grid, extended — the platform every other capacity stands on.</span>
+        <span class="whitespace-nowrap text-mist/70 tnum">PLATE 09-A · THE NETWORK</span>
+      </figcaption>
+    </figure>
+
+    <figure class="relative mt-20 overflow-hidden md:mt-28" data-reveal>
+      <div class="absolute inset-0" aria-hidden="true">
+        <Pic id="bg-active-dark-04" sizes="100vw" alt="" class="h-full w-full object-cover opacity-45" />
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,14,20,0.85),rgba(11,14,20,0.45)_60%,rgba(11,14,20,0.2))]"></div>
+      </div>
+      <div class="relative border-l-2 border-gold py-14 pl-8 pr-6 md:py-20 md:pl-12">
+        <blockquote class="heading-1 max-w-[26ch] text-cream">
+          “A transformed Ugandan society — from a peasant to a modern and prosperous country.”
+        </blockquote>
+        <p class="stamp mt-6 text-mist">The Vision 2040 aspiration</p>
+      </div>
     </figure>
   </div>
 </Chapter>

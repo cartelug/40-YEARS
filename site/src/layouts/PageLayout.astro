@@ -2,6 +2,7 @@
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import BaseLayout from './BaseLayout.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import Pic from '../components/Pic.astro';
 
 export interface Props {
   title: string;
@@ -10,8 +11,10 @@ export interface Props {
   eyebrow: string;
   heading: string;
   standfirst?: string;
+  /** optional quiet backdrop plate behind the page header */
+  bg?: string;
 }
-const { title, description, path, eyebrow, heading, standfirst } = Astro.props;
+const { title, description, path, eyebrow, heading, standfirst, bg } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} path={path}>
@@ -31,10 +34,19 @@ const { title, description, path, eyebrow, heading, standfirst } = Astro.props;
   </header>
 
   <main id="main">
-    <div class="container-wide pt-20 pb-16 md:pt-28">
-      <p class="eyebrow text-gold">{eyebrow}</p>
-      <h1 class="heading-1 mt-4 max-w-[22ch] text-cream">{heading}</h1>
-      {standfirst && <p class="body-copy mt-6 max-w-[56ch] text-mist-bright">{standfirst}</p>}
+    <div class="seam-dark relative">
+      {
+        bg && (
+          <div class="absolute inset-0 opacity-30" aria-hidden="true">
+            <Pic id={bg} sizes="100vw" alt="" class="h-full w-full object-cover" />
+          </div>
+        )
+      }
+      <div class="container-wide relative z-10 pt-20 pb-16 md:pt-28">
+        <p class="eyebrow text-gold">{eyebrow}</p>
+        <h1 class="heading-1 mt-4 max-w-[22ch] text-cream">{heading}</h1>
+        {standfirst && <p class="body-copy mt-6 max-w-[56ch] text-mist-bright">{standfirst}</p>}
+      </div>
     </div>
     <slot />
   </main>
