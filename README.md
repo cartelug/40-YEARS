@@ -6,7 +6,8 @@ International Typographic Style at national-institution grade: navy ground,
 cream ledger, one gold accent, one typeface, a hard grid, and a gold
 **transformation spine** that draws itself from 1986 to 2026 as you scroll.
 
-**Live site source:** `/site` (Astro 7, statically exported)
+**Live now:** https://cartelug.github.io/40-YEARS/ (GitHub Pages, deploy-from-branch `main`)
+**Site source:** `/site` (Astro 7, statically exported)
 **Asset intake report:** [`ASSETS.md`](./ASSETS.md) — inventory, rename map, optimisation, gap report
 **Concept source of truth:** Notion — “Forty Years of Transformation” section plan (mirrored in `/content-notion`)
 
@@ -91,7 +92,7 @@ sign-off), `eras.json`, `pillars.json`, `regions.json`, `voices.json`,
 
 ## Deploy runbook
 
-1. **Domain:** `astro.config.mjs → site` is set to `https://fortyyears.go.ug` (placeholder — confirm with the State House digital team). Update it, then regenerate `public/sitemap.xml` and `robots.txt` hostnames to match, and rebuild.
+1. **Domain:** currently served at the GitHub Pages project path, so `astro.config.mjs` sets `site: https://cartelug.github.io` + `base: /40-YEARS`. At official launch flip to `site: https://fortyyears.go.ug` + `base: /`, update `public/robots.txt` and `public/sitemap.xml` hostnames, then `bash scripts/publish-root.sh` and push `main`.
 2. **Host:** any static host. `public/_headers` carries the CSP + security headers in Netlify/Cloudflare format — mirror on nginx/Apache if used. Immutable cache is set for `/images`, `/fonts`, `/assets`.
 3. **Analytics:** privacy-first, first-party only. The page sends `navigator.sendBeacon('/collect', …)` **only after explicit consent** (no cookies, no identifiers). Point `/collect` at any first-party endpoint (or self-hosted Plausible/umami equivalent); with nothing configured the beacon is a silent no-op.
 4. **Before public launch** (from the gap report): confirm rights for the 13 landscape photographs with the Presidential Press Unit; replace representative testimonies with attributed ones; supply human-capital photography (schools/clinics) for Pillar 04 and Voices.
